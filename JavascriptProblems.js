@@ -80,6 +80,34 @@ function smallerNumbersThanCurrent(nums) {
 // Time complexity is probably O(n^2) because of nested loops
 // Space complexity is probably O(n) linear because the same variable is used and manipulated in loops
 
-console.log(smallerNumbersThanCurrent([8, 1, 2, 2, 3])); // => [4,0,1,1,3]
-console.log(smallerNumbersThanCurrent([6, 5, 4, 8])); // => [2,1,0,3]
-console.log(smallerNumbersThanCurrent([7, 7, 7, 7])); // => [0,0,0,0]
+// console.log(smallerNumbersThanCurrent([8, 1, 2, 2, 3])); // => [4,0,1,1,3]
+// console.log(smallerNumbersThanCurrent([6, 5, 4, 8])); // => [2,1,0,3]
+// console.log(smallerNumbersThanCurrent([7, 7, 7, 7])); // => [0,0,0,0]
+
+// Given an integer number n, return the difference between the product of its digits and 
+//   the sum of its digits.
+
+function subtractProductAndSum(n) {
+  // Create 2 helper methods - productOfDigits, sumOfDigits
+  // subtract the result of two and return
+  return productOfDigits(n) - sumOfDigits(n);
+}
+
+function productOfDigits(n) { // 234 = 24
+  // recursively call this method and return the product
+  if (n < 10) return n;
+  return (n % 10) * productOfDigits(Math.floor(n / 10));
+}
+
+function sumOfDigits(n) { // 234 = 9
+  // recursively call this method and return the sum
+  if (n < 10) return n;
+  return (n % 10) + sumOfDigits(Math.floor(n / 10));
+}
+
+// Time Complexity is likely O(n) because we open 2 recursive stacks, though they are not nested
+// Space complexity is likely O(C) constant because we don't store anything into memory
+
+// Constraints 1 <= n <= 10^5
+// console.log(subtractProductAndSum(234)); // => 15
+// console.log(subtractProductAndSum(4421)); // => 21
