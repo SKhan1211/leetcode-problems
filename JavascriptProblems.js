@@ -116,8 +116,12 @@ function sumOfDigits(n) { // 234 = 9
 // A defanged IP address replaces every period "." with "[.]".
 
 function defangIPaddr(address) {
-
+  // Initial thought is to split on the ., join with [.]
+  return address.split(".").join("[.]");
 }
+
+// Big-O time complexity is likely O(2n) = O(n) due to looping and splitting up elements into array, also joining
+// Space complexity is O(c) because nothing is stored in memory
 
 console.log(defangIPaddr("1.1.1.1")); // => "1[.]1[.]1[.]1"
 console.log(defangIPaddr("255.100.50.0")); // => "255[.]100[.]50[.]0"
