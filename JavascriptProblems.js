@@ -145,3 +145,15 @@ function fizzBuzz(n) {
 // Space complexity is likely O(n) since our array relies on n amount to push values into it
 
 // console.log(fizzBuzz(15)); // => ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]
+
+// Given a roman numeral, convert it to an integer.Input is guaranteed to be within the range from 1 to 3999.
+
+function romanToInt(str) {
+
+}
+
+console.log(romanToInt("III")); // => 3
+console.log(romanToInt("IV")); // => 4
+console.log(romanToInt("IX")); // => 9
+console.log(romanToInt("LVIII")); // => 58
+console.log(romanToInt("MCMXCIV")); // => 1994
