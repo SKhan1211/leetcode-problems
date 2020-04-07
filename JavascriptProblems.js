@@ -149,8 +149,31 @@ function fizzBuzz(n) {
 // Given a roman numeral, convert it to an integer.Input is guaranteed to be within the range from 1 to 3999.
 
 function romanToInt(str) {
+  let romanNumArr = [
+    "I", 1,
+    "V", 5,
+    "X", 10,
+    "L", 50,
+    "C", 100,
+    "D", 500,
+    "M", 1000
+  ]
 
+  let count = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    if (romanNumArr.indexOf(str[i]) < romanNumArr.indexOf(str[i + 1])) {
+      count -= romanNumArr[romanNumArr.indexOf(str[i]) + 1]
+    } else {
+      count += romanNumArr[romanNumArr.indexOf(str[i]) + 1]
+    }
+  }
+
+  return count;
 }
+
+// Time Complexity is O(n) because we iterate through the string
+// Space Complexity is O(C) because no extra space is required if we have a bigger input size, we only modify what we currently have
 
 console.log(romanToInt("III")); // => 3
 console.log(romanToInt("IV")); // => 4
