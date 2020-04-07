@@ -131,7 +131,17 @@ function defangIPaddr(address) {
 // For numbers which are multiples of both three and five output “FizzBuzz”.
 
 function fizzBuzz(n) {
-
+  let arr = [];
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) arr.push("FizzBuzz");
+    else if (i % 3 === 0) arr.push("Fizz");
+    else if (i % 5 === 0) arr.push("Buzz");
+    else arr.push(i.toString());
+  };
+  return arr;
 }
 
-console.log(fizzBuzz(15)); // => ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]
+// Time complexity is most likely O(n) since we loop until n
+// Space complexity is likely O(n) since our array relies on n amount to push values into it
+
+// console.log(fizzBuzz(15)); // => ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]
