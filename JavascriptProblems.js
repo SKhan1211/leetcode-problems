@@ -186,7 +186,19 @@ function romanToInt(str) {
 // Find the letter that was added in t.
 
 function findTheDifference(s, t) {
-
+  let sChars = s.split("").sort();
+  let tChars = t.split("").sort();
+  let i;
+  for (i = 0; i < sChars.length; i++) {
+    if (tChars[i] !== sChars[i]) {
+      return tChars[i];
+    }
+  }
+  return tChars[i];
 }
 
-console.log(findTheDifference(s = "abcd", t = "abcde")); // => "e"
+// Time complexity is O(n) because we are looping 
+// Space complexity is O(n) because we have variables storing based on input size
+
+// console.log(findTheDifference(s = "abcd", t = "abcde")); // => "e"
+// console.log(findTheDifference(s = "aa", t = "a")); // => "e"
