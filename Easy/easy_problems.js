@@ -17,7 +17,15 @@ function isPalindrome(str) {
 
 // Given an array, rotate the array to the right by k steps, where k is non - negative.
 function rotate(nums, k) {
+  for (let i = 0; i < k; i++) {
+    // Were popping off the end .pop
+    // Add it to the beginning
+    // let popped = [nums.pop()];
 
+    nums = [nums.pop()].concat(nums)
+  }
+
+  return nums;
 }
 
 console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3)); // => [5,6,7,1,2,3,4]
