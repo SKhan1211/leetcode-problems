@@ -28,9 +28,14 @@ function rotate(nums, k) {
   return nums;
 }
 
-console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3)); // => [5,6,7,1,2,3,4]
-console.log(rotate([-1, -100, 3, 99], 2)); // => [3,99,-1,-100]
+// console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3)); // => [5,6,7,1,2,3,4]
+// console.log(rotate([-1, -100, 3, 99], 2)); // => [3,99,-1,-100]
 // Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.
 // Could you do it in -place with O(1) extra space ?
 
 
+function merge(nums1, m, nums2, n) {
+
+}
+
+console.log(merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)); // => [1,2,2,3,5,6]

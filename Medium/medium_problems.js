@@ -25,15 +25,18 @@ function letterCombinations(digits) {
         // How do I tell how many digits I have?
         // Maybe a loop until I end with a single digit?
       
-  let digitCount = 0;
-  while (digits > 9) {
-    digits = digits / 10;
+  let digitCount = 1;
+  let digitsCopy = digits;
+  while (digitsCopy > 9) {
+    digitsCopy = Math.floor(digits / 10);
     digitCount++;
   }
 
-  console.log(digitCount) // 2
-
-
+  // I need a variable tracking permutations of digits, this variable gets returned at the end
+ "abc", "def" 
+ for (let i = 0; i < 3; i++) {
+   
+ }
 }
 
 console.log(letterCombinations("23")); // => ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
