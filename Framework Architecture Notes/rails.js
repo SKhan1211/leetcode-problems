@@ -1,0 +1,1 @@
+// When using componentDidUpdate, it takes in prevProps or prevState as args and I can use this as conditionals for when an update should do something.
