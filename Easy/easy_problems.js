@@ -10,7 +10,19 @@ function isPalindrome(str) {
 // Time complexity most likely O(n) because of the .split and .filter methods creating O(n + n)
 // Space complexity is O(n) because the size of chars depends on input
 
-console.log(isPalindrome("A man, a plan, a canal: Panama")); // => true
-console.log(isPalindrome("race a car")); // => false
-console.log(isPalindrome("0P")); // => false
+// console.log(isPalindrome("A man, a plan, a canal: Panama")); // => true
+// console.log(isPalindrome("race a car")); // => false
+// console.log(isPalindrome("0P")); // => false
+
+
+// Given an array, rotate the array to the right by k steps, where k is non - negative.
+function rotate(nums, k) {
+
+}
+
+console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3)); // => [5,6,7,1,2,3,4]
+console.log(rotate([-1, -100, 3, 99], 2)); // => [3,99,-1,-100]
+// Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.
+// Could you do it in -place with O(1) extra space ?
+
 
