@@ -17,6 +17,23 @@ function letterCombinations(digits) {
     9: "wyxz",
   };
 
+  // If simplest input was 2, how would I solve this? 23? 234?
+    // -If 2, I return digits[2]
+    // -If 23, I for for each letter in 2, combine with each letter in 3 for nested loops
+    // -If 234, now I realize I keep track of number of digits for my iterations and loop with
+        // i and a for loop for those number of digits?
+        // How do I tell how many digits I have?
+        // Maybe a loop until I end with a single digit?
+      
+  let digitCount = 0;
+  while (digits > 9) {
+    digits = digits / 10;
+    digitCount++;
+  }
+
+  console.log(digitCount) // 2
+
+
 }
 
 console.log(letterCombinations("23")); // => ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
