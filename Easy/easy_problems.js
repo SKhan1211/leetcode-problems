@@ -33,9 +33,38 @@ function rotate(nums, k) {
 // Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.
 // Could you do it in -place with O(1) extra space ?
 
-function uniqueOccurences(arr) {
+function uniqueOccurrences(arr) {
+  // My initial thought is that I need to somehow count the number of times a value appears in the array
+  // I think I can accomplish that goal with a hash tracking the number of times
+  // Some sort of logic to check if hash values are unique
+
+  // Hash to count number of times a value appears in array
+  let countHash = {}; //arr = [1]
+  arr.forEach(el => { //el = 1
+    if (countHash[el]) countHash[el]++; 
+    else countHash[el] = 1; //{1: 1}
+  }); 
+
+  // Logic to check if hash values are unique
+      // Will slicing an array and shifting off an element to match with work?
+      //    [1, 2, 3] el.shift() = 1, arr.slice(1) = [2, 3], does [2, 3] include 1? NO
+      //     el.shift() = 2, arr.slice(1) = [3], does [3] include 2? NO
+  let countArr = Object.values(countHash); // [1, 2, 3]
+  let shiftedEle = countArr.shift(); // 1, countArr = [2, 3]
   
+  while (countArr.length) {
+    if (countArr.includes(shiftedEle)) {
+      return false;
+    } else {
+      shiftedEle = countArr.shift();
+    }
+  }
+
+  return true;
 };
+
+// Time complexity: worst-case O(n^2) because of nested loops
+// Space complexity: worse-case O(n) because variable sizes depend on input sizes
 
 console.log(uniqueOccurences([1, 2, 2, 1, 1, 3])); // => true
 console.log(uniqueOccurences([1, 2])); // => false
