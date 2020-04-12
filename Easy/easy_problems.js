@@ -66,6 +66,45 @@ function uniqueOccurrences(arr) {
 // Time complexity: worst-case O(n^2) because of nested loops
 // Space complexity: worse-case O(n) because variable sizes depend on input sizes
 
-console.log(uniqueOccurences([1, 2, 2, 1, 1, 3])); // => true
-console.log(uniqueOccurences([1, 2])); // => false
-console.log(uniqueOccurences([-3, 0, 1, -3, 1, 1, 1, -3, 10, 0])); // => true
+// console.log(uniqueOccurrences([1, 2, 2, 1, 1, 3])); // => true
+// console.log(uniqueOccurrences([1, 2])); // => false
+// console.log(uniqueOccurrences([-3, 0, 1, -3, 1, 1, 1, -3, 10, 0])); // => true
+
+// uniqueOccurrences alternatives:
+// var uniqueOccurrences = function (arr) {
+//   let myMap = new Map();
+//   for (let num of arr) {
+//     if (myMap.has(num)) {
+//       myMap.set(num, (myMap.get(num) + 1));
+//     } else {
+//       myMap.set(num, 1);
+//     };
+//   };
+//   let mySet = new Set();
+//   for (const val of myMap.values()) {
+//     if (mySet.has(val)) return false;
+//     mySet.add(val);
+//   };
+//   return true;
+// };
+
+// var uniqueOccurrences = function(arr) {
+//   const obj = {};
+//   arr.forEach(val => obj[val] = (obj[val] || 0) + 1);
+//   const val = Object.values(obj).sort((a, b) => a - b);
+//   for (let i = 0; i < val.length - 1; i++) {
+//     if (val[i] === val[i + 1]) return false;
+//   }
+//   return true;
+// }
+
+// var uniqueOccurrences = function(arr) {
+//   const obj = arr.reduce((acc, cur) => {
+//     acc[cur] ? acc[cur]++ : acc[cur] = 1
+//     return acc
+//   }, {});
+//   const values = Object.values(obj);
+//   const result = new Set(values);
+//   return result.size === values.length;
+// }
+
