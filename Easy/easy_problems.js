@@ -33,9 +33,10 @@ function rotate(nums, k) {
 // Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.
 // Could you do it in -place with O(1) extra space ?
 
+function uniqueOccurences(arr) {
+  
+};
 
-function merge(nums1, m, nums2, n) {
-
-}
-
-console.log(merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)); // => [1,2,2,3,5,6]
+console.log(uniqueOccurences([1, 2, 2, 1, 1, 3])); // => true
+console.log(uniqueOccurences([1, 2])); // => false
+console.log(uniqueOccurences([-3, 0, 1, -3, 1, 1, 1, -3, 10, 0])); // => true
