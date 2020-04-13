@@ -18,3 +18,9 @@
 //  dispatch action you can just use Rails and jBuilder to return all Cards belonging to that List by doing 
 // @cards = List.find(params[:id]).cards, then when you have your list component for each list you can make
 // a card component with list.cards passed in as a prop and voila!
+
+// When you have multiple connected items like a board has many lists and lists has many cards, to trigger
+//  re-render for cards you can pass in fetchLists method from lists to cards and then call it to refetch
+//  lists so that it triggers your new card on there or when deleting it because list props won't match
+//  anymore. If you don't do this you're only mutating the database and state or props aren't changing if
+//  you are using Rails associations so no rerendering is happening. This is a good workaround.
