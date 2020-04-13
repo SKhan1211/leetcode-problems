@@ -27,5 +27,5 @@
 //      -https://stackoverflow.com/questions/33229296/how-does-reactjs-handles-rails-active-record-associations 
 //      Worth reading for this issue
 
-// When creating a new feature, this is how it goes: backend { schema => model => routes => controller => jBuilder => Postman }, => 
-//    frontend { util => actions => reducer => map container => presentational component }
+// When creating a new feature, this is how it goes: backend { schema => model => routes => controller => jBuilder/views => Postman }, => 
+//    frontend { util => actions => reducer => map container component => presentational component }
