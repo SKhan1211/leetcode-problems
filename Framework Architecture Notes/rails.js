@@ -26,3 +26,6 @@
 //  you are using Rails associations so no rerendering is happening. This is a good workaround.
 //      -https://stackoverflow.com/questions/33229296/how-does-reactjs-handles-rails-active-record-associations 
 //      Worth reading for this issue
+
+// When creating a new feature, this is how it goes: backend { schema => model => routes => controller => jBuilder => Postman }, => 
+//    frontend { util => actions => reducer => map container => presentational component }
