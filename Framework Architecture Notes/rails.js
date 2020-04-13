@@ -24,3 +24,5 @@
 //  lists so that it triggers your new card on there or when deleting it because list props won't match
 //  anymore. If you don't do this you're only mutating the database and state or props aren't changing if
 //  you are using Rails associations so no rerendering is happening. This is a good workaround.
+//      -https://stackoverflow.com/questions/33229296/how-does-reactjs-handles-rails-active-record-associations 
+//      Worth reading for this issue
