@@ -194,3 +194,23 @@ function numberOfSteps(num) {
 //   return num % 2 === 0 ? numberOfSteps(num / 2, count + 1) : numberOfSteps(num - 1, count + 1);
 // }
 
+// function numJewelsInStones(J, S) {
+//   // Naive solution is to just do 2 for loops and have a count variable, however many times 
+//   //    each J === each S, count++;
+//   let count = 0;
+//   for (let i = 0; i < J.length; i++) {
+//     for (let j = 0; j < S.length; j++) {
+//       if (J[i] === S[j]) count++;
+//     };
+//   };
+//   return count;
+// }
+
+// Time complexity: O(n^2) time
+// Space complexity: O(n) space
+
+// Optimized solution:
+function numJewelsInStones
+
+console.log(numJewelsInStones("aA", "aAAbbbb")); // => 3
+console.log(numJewelsInStones("z", "ZZ")); // => 0
