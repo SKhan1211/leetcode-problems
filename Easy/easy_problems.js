@@ -109,9 +109,28 @@ function uniqueOccurrences(arr) {
 // }
 
 function toLowerCase(str) {
+  // Initial thoughts: I'm taking in a string, what's the most efficient way to solve this problem"
+  //  I have a string, I must check every character and if its not lowercase, we must amke it lowercase
+  // Maybe I can make a map or object with keys pointing from uppercase to lowercase as a guide for this function
 
+  let alphabetObj = {
+    'A': 'a', 'B': 'b', 'C': 'c', 'D': 'd', 'E': 'e', 'F': 'f', 'G': 'g',
+    'H': 'h', 'I': 'i', 'J': 'j', 'K': 'k', 'L': 'l', 'M': 'm', 'N': 'n',
+    'O': 'o', 'P': 'p', 'Q': 'q', 'R': 'r', 'S': 's', 'T': 't', 'U': 'u',
+    'V': 'v', 'W': 'w', 'X': 'x', 'Y': 'y', 'Z': 'z'
+  } ;
+
+  return str.split("").map(char => {
+    if (alphabetObj[char]) return alphabetObj[char];
+    else return char;
+  }).join("");
 };
 
-console.log(toLowerCase("Hello")); // => "hello"
-console.log(toLowerCase("here")); // => "here"
-console.log(toLowerCase("LOVELY")); // => "lovely"
+// Time complexity: O(n) because we do splits and maps but one after another meaning we do the whole split first then map
+//  rather than doing map for each element within the split. Same with join.
+// Space complexity: Space is O(C) because we only store alphabetObj and it isn't dependant on input size since
+//  it remains the same
+
+// console.log(toLowerCase("Hello")); // => "hello"
+// console.log(toLowerCase("here")); // => "here"
+// console.log(toLowerCase("LOVELY")); // => "lovely"
