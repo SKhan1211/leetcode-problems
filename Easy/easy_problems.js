@@ -108,4 +108,10 @@ function uniqueOccurrences(arr) {
 //   return result.size === values.length;
 // }
 
+function toLowerCase(str) {
 
+};
+
+console.log(toLowerCase("Hello")); // => "hello"
+console.log(toLowerCase("here")); // => "here"
+console.log(toLowerCase("LOVELY")); // => "lovely"

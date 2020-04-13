@@ -13,3 +13,8 @@
 // Rather than creating elements on top of parents with the parent relative child absolute trick and giving display none until click,
 //  you can easily use JS to append new elements with set class names and remove as well, using node/child/etc. appendChild() or whatever.
 //  This is a cleaner method that won't clog up your html files.
+
+// When you want to return items like a List that has many Cards belonging to it, instead of giving Cards a 
+//  dispatch action you can just use Rails and jBuilder to return all Cards belonging to that List by doing 
+// @cards = List.find(params[:id]).cards, then when you have your list component for each list you can make
+// a card component with list.cards passed in as a prop and voila!
