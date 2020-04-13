@@ -134,3 +134,29 @@ function toLowerCase(str) {
 // console.log(toLowerCase("Hello")); // => "hello"
 // console.log(toLowerCase("here")); // => "here"
 // console.log(toLowerCase("LOVELY")); // => "lovely"
+
+// var toLowerCase = function(str) {
+//   let lowerCase = "";
+//   for (let letter of str) {
+//     const index = letter.charCodeAt(0);
+//     if (index >= 65 && index <= 90) {
+//       letter = String.fromCharCode(index + 32);
+//     };
+//     lowerCase += letter;
+//   };
+//   return lowerCase;
+// };
+
+// var toLowerCase = function(str) {
+//   return str.split('').reduce((prev, cur) => {
+//     let code = cur.charCodeAt(0);
+//     if (64 < code && 91 > code) {
+//       return prev + String.fromCharCode(32 + code);
+//     };
+//     return prev + cur;
+//   }, "");
+// };
+
+// var toLowerCase = function(str) {
+//   return true.toLowerCase();
+// };
