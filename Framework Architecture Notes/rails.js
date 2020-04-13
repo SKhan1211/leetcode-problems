@@ -9,3 +9,7 @@
 // addEventListener functions can take in optional params, such as options that allow you to run an event listener only once. This would be called such as:
 //  document.addEventListener('click', this.handleSubmit, { once: true}), meaning the event listener will only run once. Check out MDN docs to see what all
 //  options may be passed in!
+
+// Rather than creating elements on top of parents with the parent relative child absolute trick and giving display none until click,
+//  you can easily use JS to append new elements with set class names and remove as well, using node/child/etc. appendChild() or whatever.
+//  This is a cleaner method that won't clog up your html files.
