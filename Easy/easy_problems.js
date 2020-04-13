@@ -160,3 +160,30 @@ function toLowerCase(str) {
 // var toLowerCase = function(str) {
 //   return true.toLowerCase();
 // };
+
+function numberOfSteps(num) {
+  // I need a count variable
+  let count = 0;
+
+  // I'm going to make use of modulo to check if number is even or odd, then remove or divide accordingly
+  //    and add to count for each step
+
+  while (num !== 0) {
+    if (num % 2 === 0) {
+      num /= 2;
+      count++;
+    } else {
+      num--;
+      count++;
+    }
+  }
+
+  return count;
+}
+
+// Time Complexity: Using a single while loop causes time complexity to be O(n)
+// Space Complexity: Our count variable likely causes O(logn) because we must subtract one or divide by two
+
+// console.log(numberOfSteps(14)); // => 6
+// console.log(numberOfSteps(8)); // => 4
+// console.log(numberOfSteps(123)); // => 12 
