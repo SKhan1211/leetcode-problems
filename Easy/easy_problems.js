@@ -210,7 +210,33 @@ function numberOfSteps(num) {
 // Space complexity: O(n) space
 
 // Optimized solution:
-function numJewelsInStones
+function numJewelsInStones(J, S) {
+  // I know that the characters in J are distinct
+  // I can turn J into a hash and then use a count variable for each item of S
+  // Return count added up, this might trade space for better time
+
+  let jewelsObj = {};
+  // O(n)
+  J.split("").forEach(char => {
+    jewelsObj[char] = 0;
+  });
+
+  // O(n)
+  for (let i = 0; i < S.length; i++) {
+    if (jewelsObj[S[i]] !== undefined) jewelsObj[S[i]] += 1;
+  };
+
+  // O(n)
+  let counted = 0;
+  Object.values(jewelsObj).forEach(count => {
+    counted += count;
+  })
+
+  return counted;
+}
+
+// Time complexity: O(n) time
+// Space complexity: O(n) space
 
 console.log(numJewelsInStones("aA", "aAAbbbb")); // => 3
 console.log(numJewelsInStones("z", "ZZ")); // => 0
