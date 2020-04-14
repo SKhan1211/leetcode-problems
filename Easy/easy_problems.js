@@ -238,5 +238,21 @@ function numJewelsInStones(J, S) {
 // Time complexity: O(n) time
 // Space complexity: O(n) space
 
-console.log(numJewelsInStones("aA", "aAAbbbb")); // => 3
-console.log(numJewelsInStones("z", "ZZ")); // => 0
+// console.log(numJewelsInStones("aA", "aAAbbbb")); // => 3
+// console.log(numJewelsInStones("z", "ZZ")); // => 0
+
+// Alternative solutions:
+// const numJewelsInStones = (J, S) => {
+//   const jewels = new Set(J);
+//   return S.split("").reduce((res, s) => res + jewels.has(s), 0);
+// };
+// var numJewelsInStones = function(S, J) {
+//   let count = 0;
+//   let len = S.length;
+//   for (let i = 0; i < len; i++) {
+//     if (J.indexOf(S[i]) >= 0) {
+//       count++;
+//     };
+//   };
+//   return count;
+// };
