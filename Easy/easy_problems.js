@@ -256,3 +256,12 @@ function numJewelsInStones(J, S) {
 //   };
 //   return count;
 // };
+
+function createTargetArray(nums, index) {
+  // Can I map values to hash and then just return Object.values?
+};
+
+console.log(createTargetArray([0, 1, 2, 3, 4], [0, 1, 2, 2, 1])); // => [0,4,1,3,2]
+console.log(createTargetArray([1, 2, 3, 4, 0], [0, 1, 2, 3, 0])); // => [0,1,2,3,4]
+console.log(createTargetArray([1], [0])); // => [1]
+
