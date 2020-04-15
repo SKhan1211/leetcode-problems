@@ -352,4 +352,42 @@ function reverseWords(str) {
 // Time complexity: O(n^2) because we nest a loop inside the map, this is naive solution
 // Space complexity: O(C) because we aren't using memory at all
 
-console.log(reverseWords("Let's take LeetCode contest")); // => "s'teL ekat edoCteeL tsetnoc"
+// console.log(reverseWords("Let's take LeetCode contest")); // => "s'teL ekat edoCteeL tsetnoc"
+
+// Alternative methods:
+// var reverseWords = function(s) {
+//   let res = '';
+//   let word = '';
+//   for (let c of s) {
+//     if (c === ' ') {
+//       res += word + c;
+//       word = '';
+//     } else {
+//       word = c + word;
+//     }
+//   }
+//   return res + word;
+// }
+let reverse = (start, end, array) => {
+  while (start < end) {
+    let temp = array[start];
+    array[start] = array[end];
+    array[end] = temp;
+    start++;
+    end--;
+  }
+}
+
+var reverseWords = function(s) {
+  let copy = [...s];
+  let i = 0, j = 0;
+  while (j < s.length) {
+    if (copy[j] === ' ') {
+      reverse(i, j - 1, copy);
+      i = j + 1;
+    }
+    j++;
+  }
+  reverse(i, s, length - 1, copy);
+  return copy.join('');
+}
