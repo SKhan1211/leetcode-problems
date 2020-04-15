@@ -21,4 +21,12 @@ function selectionSort(array) {
 
 };
 
-console.log(selectionSort([1, 45, 6, 3, 5])); // => [1, 3, 5, 6, 45];
+function swap(arr, index1, index2) {
+  let temp = arr[index1];
+  arr[index1] = arr[index2];
+  arr[index2] = temp;
+  return arr;
+};  
+
+// console.log(selectionSort([1, 45, 6, 3, 5])); // => [1, 3, 5, 6, 45]
+console.log(swap([3, 1], 0, 1)); // => [1, 3]
