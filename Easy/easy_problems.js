@@ -257,15 +257,9 @@ function numJewelsInStones(J, S) {
 //   return count;
 // };
 
-function createTargetArray(nums, index) {
-  let target = [nums.shift()];
-  index = index.slice(1);
-  https://leetcode.com/problems/create-target-array-in-the-given-order/
+function findNumbers(nums) {
 
-  return target;
 };
 
-console.log(createTargetArray([0, 1, 2, 3, 4], [0, 1, 2, 2, 1])); // => [0,4,1,3,2]
-console.log(createTargetArray([1, 2, 3, 4, 0], [0, 1, 2, 3, 0])); // => [0,1,2,3,4]
-console.log(createTargetArray([1], [0])); // => [1]
+console.log(findNumbers([12, 345, 2, 6, 7896])); // => 2
 
