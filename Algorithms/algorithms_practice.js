@@ -77,8 +77,19 @@ function merge(array1, array2) {
 };
 
 function mergeSort(array) {
+  if (array.length <= 1) {
+    return array;
+  }
 
+  let middleIdx = Math.floor(array.length / 2);
+  let leftHalf = array.slice(0, middleIdx);
+  let rightHalf = array.slice(middleIdx);
+
+  let sortedLeft = mergeSort(leftHalf);
+  let sortedright = mergeSort(rightHalf);
+
+  return merge(sortedLeft, sortedright);
 };
 
-// console.log(mergeSort([1, 4, 3, 5, 7, 4, 2])); // => [1. 2. 3. 4. 4. 5. 7]
-console.log(merge([3, 2, 6], [8, 4, 2])); // => [3, 2, 6, 8, 4, 2]
+console.log(mergeSort([1, 4, 3, 5, 7, 4, 2])); // => [1. 2. 3. 4. 4. 5. 7]
+// console.log(merge([3, 2, 6], [8, 4, 2])); // => [3, 2, 6, 8, 4, 2]
