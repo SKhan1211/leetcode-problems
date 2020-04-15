@@ -258,7 +258,11 @@ function numJewelsInStones(J, S) {
 // };
 
 function createTargetArray(nums, index) {
-  // Can I map values to hash and then just return Object.values?
+  let target = [nums.shift()];
+  index = index.slice(1);
+  https://leetcode.com/problems/create-target-array-in-the-given-order/
+
+  return target;
 };
 
 console.log(createTargetArray([0, 1, 2, 3, 4], [0, 1, 2, 2, 1])); // => [0,4,1,3,2]
