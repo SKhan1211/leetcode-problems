@@ -323,5 +323,24 @@ function countNegatives(grid) {
 // Time complexity: O(n^2) because we use 2 loops nested
 // Space complexity: O(C) because we only manipulate the same count variable
 
-console.log(countNegatives([[4, 3, 2, -1], [3, 2, 1, -1], [1, 1, -1, -2], [-1, -1, -2, -3]])); // => 8
+// console.log(countNegatives([[4, 3, 2, -1], [3, 2, 1, -1], [1, 1, -1, -2], [-1, -1, -2, -3]])); // => 8
 
+// Alternative solutions:
+// const countNegatives = grid => grid.reduce((acc, curr) => acc + curr.filter(n => n < 0).length, 0);
+// var countNegatives = function(grid) {
+//   let count = 0;
+
+//   for (let i = 0; i < grid.length; i++) {
+//     for (let j = grid[i].length - 1; j >= 0; j-= 1) {
+//       if (grid[i][j] < 0) {
+//         count += 1;
+//       } else {
+//         break;
+//       }
+//     }
+//   }
+//   return count;
+// }
+// var countNegatives = function(grid) {
+  // return grid.map(el => el.filter(el => el !== Math.abs(el))).map(el => el.length).reduce((prev, curr) => curr += prev);
+// }
