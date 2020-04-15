@@ -108,4 +108,15 @@ function quickSort(array) {
   return [...leftHalf, pivot, ...rightHalf];
 };
 
-console.log(quickSort([6, 3, 2, 7, 5])); // => [2, 3, 5, 6, 7]
+// console.log(quickSort([6, 3, 2, 7, 5])); // => [2, 3, 5, 6, 7]
+
+function radixSort(arr) {
+  
+};
+
+function radixSortWithNegatives(arr) {
+
+};
+
+console.log(radixSort([6, 2, 5, 2, 1])); // => [1, 2, 2, 5, 6]
+console.log(radixSort([4, 6, 2, -5, 7, -1])); // => [-5, -1, 2, 4, 6, 7]
