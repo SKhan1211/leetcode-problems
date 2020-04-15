@@ -167,5 +167,11 @@ function getMaxDigits(nums) {
   return maxDigits;
 }
 
-console.log(radixSort([6, 2, 5, 2, 1])); // => [1, 2, 2, 5, 6]
-console.log(radixSortWithNegatives([4, 6, 2, -5, 7, -1])); // => [-5, -1, 2, 4, 6, 7]
+// console.log(radixSort([6, 2, 5, 2, 1])); // => [1, 2, 2, 5, 6]
+// console.log(radixSortWithNegatives([4, 6, 2, -5, 7, -1])); // => [-5, -1, 2, 4, 6, 7]
+
+function countingSort(arr, max) {
+
+}
+
+console.log(countingSort([5, 2, 6, 8, 3])); // => [2, 3, 5, 6, 8]
