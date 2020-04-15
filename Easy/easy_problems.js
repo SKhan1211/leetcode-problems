@@ -344,3 +344,9 @@ function countNegatives(grid) {
 // var countNegatives = function(grid) {
   // return grid.map(el => el.filter(el => el !== Math.abs(el))).map(el => el.length).reduce((prev, curr) => curr += prev);
 // }
+
+function reverseWords(str) {
+
+};
+
+console.log(reverseWords("Let's take LeetCode contest")); // => "s'teL ekat edoCteeL tsetnoc"
