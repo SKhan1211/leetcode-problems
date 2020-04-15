@@ -258,20 +258,33 @@ function numJewelsInStones(J, S) {
 // };
 
 function findNumbers(nums) {
-
+  let evenCount = 0;
+  nums.forEach(el => {
+    if (findDigits(el) % 2 === 0) {
+      evenCount++;
+    }
+  })
+  return evenCount;
 };
+
+// Time complexity O(nlogn) because we iterate over nums but findDigits is logn runtime
+// Space complexity is O(n) because worse case all are even numbers
 
 function findDigits(n, count = 0) {
   // add one to count every time we perform modulo 
   // base case if no modulo to perform, return 1?
+  if (n < 10) return 1;
 
   ++count;
   if (Math.floor(n / 10) >= 10) {
     return findDigits(Math.floor(n / 10), count)
   }
   else return ++count;
+
+  // Time complexity is O(logn) because recursion but dividing by 10
+  // Space complexity is O(C) because the same variable gets added a couple of times
 };
 
-// console.log(findNumbers([12, 345, 2, 6, 7896])); // => 2
-console.log(findDigits(29432)); // => 5
+console.log(findNumbers([12, 345, 2, 6, 7896])); // => 2
+// console.log(findDigits(23921)); // => 5
 
