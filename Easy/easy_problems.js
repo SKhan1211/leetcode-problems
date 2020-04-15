@@ -285,6 +285,28 @@ function findDigits(n, count = 0) {
   // Space complexity is O(C) because the same variable gets added a couple of times
 };
 
-console.log(findNumbers([12, 345, 2, 6, 7896])); // => 2
+// console.log(findNumbers([12, 345, 2, 6, 7896])); // => 2
 // console.log(findDigits(23921)); // => 5
+
+// Alternative solutions:
+// var findNumbers = function(nums) {
+//   const isEvenNums = nums => {
+//     return String(num).length % 2 === 0;
+//   };
+//   return nums.filter(el => isEvenNums(el)).length;
+// }
+
+// var findNumbers = function(nums) {
+//   var even = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i].toString().length % 2 === 0) {
+//       even++;
+//     }
+//   }
+//   return even;
+// }
+
+// var findNumbers = function(nums) {
+//   return nums.filter(n => (n > 9 && n < 100) || (n > 999 && n < 10000)).length
+// }
 
