@@ -58,3 +58,14 @@ function insertionSort(arr) {
 };
 
 console.log(insertionSort([1, 5, 2, 4, 6, 8])); // => [1, 2, 4, 5, 6, 8]
+
+function merge(array1, array2) {
+
+};
+
+function mergeSort(array) {
+
+};
+
+// console.log(mergeSort([1, 4, 3, 5, 7, 4, 2])); // => [1. 2. 3. 4. 4. 5. 7]
+console.log(merge([3, 2, 6], [8, 4, 2])); // => [2, 2, 3, 4, 6, 8]
