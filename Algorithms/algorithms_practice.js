@@ -57,10 +57,23 @@ function insertionSort(arr) {
   return arr;
 };
 
-console.log(insertionSort([1, 5, 2, 4, 6, 8])); // => [1, 2, 4, 5, 6, 8]
+// console.log(insertionSort([1, 5, 2, 4, 6, 8])); // => [1, 2, 4, 5, 6, 8]
 
 function merge(array1, array2) {
+  let merged = [];
 
+  while (array1.length || array2.length) {
+    let ele1 = array1.length ? array1[0] : Infinity;
+    let ele2 = array2.length ? array2[0] : Infinity;
+
+    let next;
+    if (ele1 < ele2) next = array1.shift();
+    else next = array2.shift();
+
+    merged.push(next);
+  }
+
+  return merged;
 };
 
 function mergeSort(array) {
@@ -68,4 +81,4 @@ function mergeSort(array) {
 };
 
 // console.log(mergeSort([1, 4, 3, 5, 7, 4, 2])); // => [1. 2. 3. 4. 4. 5. 7]
-console.log(merge([3, 2, 6], [8, 4, 2])); // => [2, 2, 3, 4, 6, 8]
+console.log(merge([3, 2, 6], [8, 4, 2])); // => [3, 2, 6, 8, 4, 2]
