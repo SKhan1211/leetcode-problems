@@ -29,3 +29,6 @@
 
 // When creating a new feature, this is how it goes: backend { schema => model => routes => controller => jBuilder/views => Postman }, => 
 //    frontend { util => actions => reducer => map container component => presentational component }
+
+// localStorage is useful when you need to quickly store something like a walkId which depends on multiple wayPoint id's
+// created with Google Maps!! Use it and utilize it but clear when logging out.
