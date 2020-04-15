@@ -407,3 +407,24 @@ function repeatedNTimes(arr) {
 // Space complexity: O(N) because countObj size depends on input size
 
 // console.log(repeatedNTimes([1, 2, 3, 3])); // 3
+// Alternative Methods:
+// var repeatedNTimes = function(A) {
+//   let lookup = new Set();
+//   for (let n of A) {
+//     if (lookup.has(n)) return n;
+//     lookup.add(n);
+//   };
+//   return -1;
+// }
+// var repeatedNTimes = function(A) {
+//   for (let i = 0, elems = new Set(); i < A.length; i++) {
+//     if (elems.has(A[i])) return A[i];
+//     else elems.add(A[i]);
+//   }
+// }
+// var repeatedNTimes = function(A) {
+//   var N = A.length / 2;
+//   for (var i = 0; i < A.length - 1; i++) {
+//     if (A.indexOf(A[i], N) >= 0) return A[i];
+//   }
+// }
