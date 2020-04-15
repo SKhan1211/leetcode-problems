@@ -91,5 +91,14 @@ function mergeSort(array) {
   return merge(sortedLeft, sortedright);
 };
 
-console.log(mergeSort([1, 4, 3, 5, 7, 4, 2])); // => [1. 2. 3. 4. 4. 5. 7]
+// console.log(mergeSort([1, 4, 3, 5, 7, 4, 2])); // => [1. 2. 3. 4. 4. 5. 7]
 // console.log(merge([3, 2, 6], [8, 4, 2])); // => [3, 2, 6, 8, 4, 2]
+
+function quickSort(array) {
+  // base case goes here
+
+  //recursive case here
+
+};
+
+console.log(quickSort([6, 3, 2, 7, 5])); // => [2, 3, 5, 6, 7]
