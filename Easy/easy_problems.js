@@ -310,3 +310,18 @@ function findDigits(n, count = 0) {
 //   return nums.filter(n => (n > 9 && n < 100) || (n > 999 && n < 10000)).length
 // }
 
+function countNegatives(grid) {
+  let count = 0;
+  grid.forEach(el => {
+    el.forEach(innerEl => {
+      if (innerEl < 0) count++;
+    });
+  });
+  return count;
+};
+
+// Time complexity: O(n^2) because we use 2 loops nested
+// Space complexity: O(C) because we only manipulate the same count variable
+
+console.log(countNegatives([[4, 3, 2, -1], [3, 2, 1, -1], [1, 1, -1, -2], [-1, -1, -2, -3]])); // => 8
+
