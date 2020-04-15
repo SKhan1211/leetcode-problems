@@ -111,7 +111,22 @@ function quickSort(array) {
 // console.log(quickSort([6, 3, 2, 7, 5])); // => [2, 3, 5, 6, 7]
 
 function radixSort(arr) {
-  
+  if (!Array.isArray(arr)) {
+    return null;
+  }
+
+  let maxDigits = getMaxDigits(arr);
+  for (let k = 0; k < maxDigits; k++) {
+    let buckets = Array.from({length: 10}, () => []);
+
+    for (let i = 0; i < arr.length; i++) {
+      let digit = getDigitFrom(arr[i], k);
+      buckets[digit].push(arr[i]);
+    };
+
+    arr = [].concat(...buckets);
+  }
+  return arr;
 };
 
 function radixSortWithNegatives(arr) {
@@ -125,7 +140,8 @@ function getMaxDigits(nums) {
   for (let i = 0; i < nums.length; i++) {
     maxDigits = Math.max(maxDigits, getIntLength(nums[i]));
   }
+  return maxDigits;
 }
 
 console.log(radixSort([6, 2, 5, 2, 1])); // => [1, 2, 2, 5, 6]
-console.log(radixSort([4, 6, 2, -5, 7, -1])); // => [-5, -1, 2, 4, 6, 7]
+console.log(radixSortWithNegatives([4, 6, 2, -5, 7, -1])); // => [-5, -1, 2, 4, 6, 7]
