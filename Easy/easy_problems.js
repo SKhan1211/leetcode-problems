@@ -393,7 +393,17 @@ function reverseWords(str) {
 // }
 
 function repeatedNTimes(arr) {
-
+  let countObj = {};
+  for (let n of arr) {
+    if (countObj[n]) countObj[n] += 1;
+    else countObj[n] = 1;
+  }
+  for (let key in countObj) {
+    if (countObj[key] !== 1) return key;
+  }
 };
 
-console.log(repeatedNTimes([1, 2, 3, 3])); // 3
+// Time complexity: O(n) because of our looping
+// Space complexity: O(N) because countObj size depends on input size
+
+// console.log(repeatedNTimes([1, 2, 3, 3])); // 3
