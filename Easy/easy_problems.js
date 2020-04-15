@@ -368,26 +368,32 @@ function reverseWords(str) {
 //   }
 //   return res + word;
 // }
-let reverse = (start, end, array) => {
-  while (start < end) {
-    let temp = array[start];
-    array[start] = array[end];
-    array[end] = temp;
-    start++;
-    end--;
-  }
-}
+// let reverse = (start, end, array) => {
+//   while (start < end) {
+//     let temp = array[start];
+//     array[start] = array[end];
+//     array[end] = temp;
+//     start++;
+//     end--;
+//   }
+// }
 
-var reverseWords = function(s) {
-  let copy = [...s];
-  let i = 0, j = 0;
-  while (j < s.length) {
-    if (copy[j] === ' ') {
-      reverse(i, j - 1, copy);
-      i = j + 1;
-    }
-    j++;
-  }
-  reverse(i, s, length - 1, copy);
-  return copy.join('');
-}
+// var reverseWords = function(s) {
+//   let copy = [...s];
+//   let i = 0, j = 0;
+//   while (j < s.length) {
+//     if (copy[j] === ' ') {
+//       reverse(i, j - 1, copy);
+//       i = j + 1;
+//     }
+//     j++;
+//   }
+//   reverse(i, s, length - 1, copy);
+//   return copy.join('');
+// }
+
+function repeatedNTimes(arr) {
+
+};
+
+console.log(repeatedNTimes([1, 2, 3, 3])); // 3
