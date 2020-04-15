@@ -96,9 +96,16 @@ function mergeSort(array) {
 
 function quickSort(array) {
   // base case goes here
-
+  if (array.length <= 1) return array;
   //recursive case here
+  let pivot = array.shift();
+  let left = array.filter(el => el < pivot);
+  let right = array.filter(el => el >= pivot);
 
+  let leftHalf = quickSort(left);
+  let rightHalf = quickSort(right);
+
+  return [...leftHalf, pivot, ...rightHalf];
 };
 
 console.log(quickSort([6, 3, 2, 7, 5])); // => [2, 3, 5, 6, 7]
