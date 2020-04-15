@@ -346,7 +346,10 @@ function countNegatives(grid) {
 // }
 
 function reverseWords(str) {
-
+  return str.split(" ").map(el => el.split("").reverse().join("")).join(" ");
 };
+
+// Time complexity: O(n^2) because we nest a loop inside the map, this is naive solution
+// Space complexity: O(C) because we aren't using memory at all
 
 console.log(reverseWords("Let's take LeetCode contest")); // => "s'teL ekat edoCteeL tsetnoc"
