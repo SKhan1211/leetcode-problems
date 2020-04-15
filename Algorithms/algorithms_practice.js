@@ -17,8 +17,20 @@ function BubbleSort(array) {
 
 // console.log(BubbleSort([4, 1, 3, 4, 6])); // => [1, 3, 4, 4, 6]
 
-function selectionSort(array) {
+function selectionSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let minIndex = i;
 
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[minIndex] > arr[j]) {
+        minIndex = j;
+      };
+    };
+
+    swap (arr, i, minIndex);
+  };
+
+  return arr;
 };
 
 function swap(arr, index1, index2) {
@@ -28,5 +40,5 @@ function swap(arr, index1, index2) {
   return arr;
 };  
 
-// console.log(selectionSort([1, 45, 6, 3, 5])); // => [1, 3, 5, 6, 45]
-console.log(swap([3, 1], 0, 1)); // => [1, 3]
+console.log(selectionSort([1, 45, 6, 3, 5])); // => [1, 3, 5, 6, 45]
+// console.log(swap([3, 1], 0, 1)); // => [1, 3]
