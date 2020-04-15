@@ -261,5 +261,17 @@ function findNumbers(nums) {
 
 };
 
-console.log(findNumbers([12, 345, 2, 6, 7896])); // => 2
+function findDigits(n, count = 0) {
+  // add one to count every time we perform modulo 
+  // base case if no modulo to perform, return 1?
+
+  ++count;
+  if (Math.floor(n / 10) >= 10) {
+    return findDigits(Math.floor(n / 10), count)
+  }
+  else return ++count;
+};
+
+// console.log(findNumbers([12, 345, 2, 6, 7896])); // => 2
+console.log(findDigits(29432)); // => 5
 
