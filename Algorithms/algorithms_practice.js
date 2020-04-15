@@ -40,5 +40,11 @@ function swap(arr, index1, index2) {
   return arr;
 };  
 
-console.log(selectionSort([1, 45, 6, 3, 5])); // => [1, 3, 5, 6, 45]
+// console.log(selectionSort([1, 45, 6, 3, 5])); // => [1, 3, 5, 6, 45]
 // console.log(swap([3, 1], 0, 1)); // => [1, 3]
+
+function insertionSort(arr) {
+
+};
+
+console.log(insertionSort([1, 5, 2, 4, 6, 8])); // => [1, 2, 4, 5, 6, 8]
