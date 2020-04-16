@@ -428,3 +428,9 @@ function repeatedNTimes(arr) {
 //     if (A.indexOf(A[i], N) >= 0) return A[i];
 //   }
 // }
+
+function flipAndInvertImage(A) {
+
+};
+
+console.log(flipAndInvertImage([[1, 1, 0], [1, 0, 1], [0, 0, 0]])); // => [[1,0,0],[0,1,0],[1,1,1]]
