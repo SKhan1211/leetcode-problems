@@ -542,3 +542,60 @@ function invertImage(A) {
 // console.log(transpose([[3, 7, 8], [9, 11, 13], [15, 16, 17]])); // => [[3, 9, 15], [7, 11, 16], [8, 13, 17]]
 
 // Add working solutions:
+// var luckyNumbers = function(matrix) {
+//   const rowHash = {};
+//   const colHash = {};
+//   const answer = [];
+
+//   for (let i = 0; i < matrix.length; i++) {
+//     rowHash[i] = matrix[i][0]
+//     for (let j = 0; j < matrix[i].length; j++) {
+//       if (matrix[i][j] < rowHash[i]) {
+//         rowHash[i] = matrix[i][j]
+//       };
+//       if (colHash[j]) {
+//         if (matrix[i][j] > colHash[j].val) {
+//           colHash[j] = {val: matrix[i][j], row: i}
+//         }
+//       } else {
+//         colHash[j] = {val: matrix[0][j], row: [i]}
+//       }
+//     }
+//   }
+//   console.log('rowHash', rowHash);
+//   console.log('colHash', colHash);
+
+//   for (let colVal in colHash) {
+//     console.log('--------');
+//     console.log('colVal:', colVal);
+//     console.log('Left:', colHash[colVal].val);
+//     console.log('Right:', rowHash[colHash[colVal].row]);
+//     if (colHash[colVal].val === rowHash[colHash[colVal].row]) {
+//       answer.push(colHash[colVal].val);
+//     }
+//   }
+//   return answer;
+// };
+
+// var luckyNumbers = function(matrix) {
+//   let happyArr = [];
+//   const cLen = matrix.length;
+//   const rLen = matrix[i].length;
+
+//   for (let i = 0; i < cLen; i++) {
+//     outer:
+//     for (let j = 0; j < rLen; j++) {
+//       const currEl = matrix[i][j];
+
+//       for (let c = 0; c < cLen; c++) {
+//         if (c !== i && currEl < matrix[c][j]) continue outer;
+//       }
+//       for (let r = 0; r < rLen; r++) {
+//         if (r !== j && currEl > matrix[i][r]) continue outer;
+//       }
+
+//       happyArr.push(currEl);
+//     }
+//   }
+//   return happyArr;
+// }
