@@ -450,3 +450,25 @@ function invertImage(A) {
 
 // console.log(flipAndInvertImage([[1, 1, 0], [1, 0, 1], [0, 0, 0]])); // => [[1,0,0],[0,1,0],[1,1,1]]
 // console.log(invertImage([0, 1, 1])); //  => [1, 0, 0]
+
+// Alternative solutions:
+// var flipAndInvertImage = function(A) {
+//   return A.map(subArr => subArr.reverse().map(subEl => subEl^1));
+// };
+// var flipAndInvertImage = function(A) {
+//   let reversed = A.map((currArray, index) => {
+//     return currArray.reverse();
+//   })
+
+//   for (let i = 0; i < reversed.length; i++) {
+//     for (let j = 0; j < reversed[i].length; j++) {
+//       if (reversed[i][j] === 1) {
+//         reversed[i][j] = 0;
+//       } else {
+//         reversed[i][j] = 1;
+//       }
+//     }
+//   }
+//   return reversed;
+// };
+// console.log(flipAndInvertImage([[1, 1, 0], [1, 0, 1], [0, 0, 0]])); // => [[1,0,0],[0,1,0],[1,1,1]]
