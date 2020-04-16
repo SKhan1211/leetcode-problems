@@ -472,3 +472,17 @@ function invertImage(A) {
 //   return reversed;
 // };
 // console.log(flipAndInvertImage([[1, 1, 0], [1, 0, 1], [0, 0, 0]])); // => [[1,0,0],[0,1,0],[1,1,1]]
+
+function luckyNumbers(matrix) {
+  // Iterate with nested loops to eye out each element
+  // First check if element is smallest in its row -- helper method?
+  // Then check if element is biggest in its column, *transpose* then same helper method?
+};
+
+console.log(luckyNumbers([[3, 7, 8], [9, 11, 13], [15, 16, 17]])); // => 15
+// Rules state lucky number is an element that is min of its row and max of its col
+[
+  [3, 7, 8],
+  [9, 11, 13],
+  [15, 16, 17]
+]
