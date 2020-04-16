@@ -430,7 +430,23 @@ function repeatedNTimes(arr) {
 // }
 
 function flipAndInvertImage(A) {
+  // First flip image horizontally
+  let flipped = A.map(subArr => subArr.reverse());
 
+  // Invert image where 0's replaced by 1's and vice versa -- helper method?
+  // invertImage(); for each..?
+  return flipped.map(el => invertImage(el));
 };
 
-console.log(flipAndInvertImage([[1, 1, 0], [1, 0, 1], [0, 0, 0]])); // => [[1,0,0],[0,1,0],[1,1,1]]
+function invertImage(A) {
+  return A.map(el => {
+    if (el === 1) return el = 0;
+    else if (el === 0) return el = 1;
+  });
+};
+
+// Time complexity: O(n^2) because we do a 2nd .map and within it we call the invertImage which is O(n)
+// Space complexity: O(n) because flipped depends on input size
+
+// console.log(flipAndInvertImage([[1, 1, 0], [1, 0, 1], [0, 0, 0]])); // => [[1,0,0],[0,1,0],[1,1,1]]
+// console.log(invertImage([0, 1, 1])); //  => [1, 0, 0]
