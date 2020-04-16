@@ -473,16 +473,72 @@ function invertImage(A) {
 // };
 // console.log(flipAndInvertImage([[1, 1, 0], [1, 0, 1], [0, 0, 0]])); // => [[1,0,0],[0,1,0],[1,1,1]]
 
-function luckyNumbers(matrix) {
-  // Iterate with nested loops to eye out each element
-  // First check if element is smallest in its row -- helper method?
-  // Then check if element is biggest in its column, *transpose* then same helper method?
-};
+// function luckyNumbers(matrix) {
+//   // We return an array of lucky numbers
+//   let smallestInRowArr = [];
+//   let biggestInColArr = [];
+//   // Iterate with nested loops to eye out each element
+//   // First check if element is smallest in its row -- helper method?
+//   //  -smallestInRow(el, arr);
+//   // Then check if element is biggest in its column, *transpose* then same helper method?
+//   //  -biggestInRow(el,e arr);
 
-console.log(luckyNumbers([[3, 7, 8], [9, 11, 13], [15, 16, 17]])); // => 15
+//   let currentEl;
+//   let smallest;
+//   matrix.forEach(subArr => {
+//     // First check if each el in subArr is smallest in row
+//     subArr.forEach(el => {
+//       smallest = false;
+//       currentEl = el;
+//       if (smallestInRow(el, subArr)) smallest = true;
+//       if (smallest === true) smallestInRowArr.push(currentEl);
+//     })
+//   })
+
+//   let biggest;
+//   let transposed = transpose(matrix);
+//   transposed.forEach(subArr => {
+//     subArr.forEach(el => {
+//       biggest = false;
+//       currentEl = el;
+//       if (biggestInRow(el, subArr)) biggest = true;
+//       if (biggest === true) biggestInColArr.push(currentEl);
+//     })
+//   })
+
+//   return smallestInRowArr.filter(el => biggestInColArr.includes(el));
+// };
+
+// function smallestInRow(el, arr) {
+//   return arr.every(subEl => subEl >= el);
+// }
+
+// function biggestInRow(el, arr) {
+//   return arr.every(subEl => subEl <= el);
+// }
+
+// const transpose = function (grid) {
+//   let transposed = [];
+//   grid.forEach((row, i) => {
+//     let newRow = [];
+//     for (let j = 0; j < grid.length; j++) {
+//       newRow.push(grid[j][i]);
+//     }
+//     transposed.push(newRow);
+//   });
+//   return transposed;
+// }
+
+// console.log(luckyNumbers([[3, 7, 8], [9, 11, 13], [15, 16, 17]])); // => 15
+// console.log(transpose([[1, 10, 4, 2], [9, 3, 8, 7], [15, 16, 17, 12]]));
 // Rules state lucky number is an element that is min of its row and max of its col
-[
-  [3, 7, 8],
-  [9, 11, 13],
-  [15, 16, 17]
-]
+// [
+//   [3, 7, 8],
+//   [9, 11, 13],
+//   [15, 16, 17]
+// ]
+// console.log(smallestInRow(15, [15, 16, 17])); // => true
+// console.log(biggestInRow(15, [15, 16, 17])); // => false
+// console.log(transpose([[3, 7, 8], [9, 11, 13], [15, 16, 17]])); // => [[3, 9, 15], [7, 11, 16], [8, 13, 17]]
+
+// Add working solutions:
