@@ -632,5 +632,47 @@ function RAndLCount(str) {
 // Time complexity: O(n^3) because of nested loops and helper method nested iteration call
 // Space complexity: O(nlogn) because arr size depends on inputs
 
-console.log(balancedStringSplit("RLRRLLRLRL")); // => 4
+// console.log(balancedStringSplit("RLRRLLRLRL")); // => 4
 // console.log(RAndLCount("RL")); // => True
+
+// Alternative Solutions:
+// var balancedStringSplit = function(s) {
+//   let matches = 0;
+//   let balance = 0;
+
+//   for (let i = 0; i < s.length; i++) {
+//     if (s[i] === "R") {
+//       balance -= 1;
+//     } else if (s[i] === "L") {
+//       balance += 1;
+//     } 
+
+//     if (balance === 0) {
+//       matches += 1;
+//     }
+//   }
+
+//   return matches;
+// }
+// var balancedStringSplit = function(s) {
+//   let matches = 0;
+//   const stack = [];
+
+//   stack.push(s[0]);
+
+//   for (let i = 1; i < s.length; i++) {
+//     const top = stack[stack.length - 1];
+
+//     if (top !== undefined && top !== s[i]) {
+//       stack.pop();
+//     } else {
+//       stack.push(s[i])
+//     }
+
+//     if (stack.length === 0) {
+//       matches += 1;
+//     }
+//   }
+
+//   return matches;
+// };
