@@ -702,3 +702,43 @@ function freqAlphabets(s) {
 // Space complexity: O(n) because splitNum size worst case could be all numbers less than 9 so dependant on input size
 
 // console.log(freqAlphabets("10#11#12")); // => "jkab" 
+// Alternative Methods:
+// const map = { "1": "a", "2": "b", "3": "c", "4": "d", "5": "e", "6": "f", "7": "g", "8": "h", "9": "i", "10": "j", "11": "k", "12": "l", "13": "m", "14": "n", "15": "o", "16": "p", "17": "q", "18": "r", "19": "s", "20": "t", "21": "u", "22": "v", "23": "w", "24": "x", "25": "y", "26": "z" };
+// const freqAlphabets = s => {
+//   const stack = [];
+//   for (const char of s) {
+//     if (char !== '#') { stack.push(char); continue; }
+//     const digit = stack.pop();
+//     stack.push(map[(stack.pop() + digit)]);
+//   }
+//   let ret = '';
+//   for (const char of stack) {
+//     ret += char <= '9' ? map[char] : char;
+//   };
+//   return ret;
+// };
+// const freqAlphabets = s => {
+//   let ret = '';
+//   for (let i = 0; i < s.length; ++i) {
+//     ret += map[s[i + 2] === '#' ? (i += 2, s[i - 2] + s[i - 1]) : s[i]];
+//   }
+//   return ret;
+// };
+// const freqAlphabets = s => s.replace(/(\d\d#|\d)/g, t => map[t.length === 3 ? t[0] + t[1] : t]);
+
+const judgeCircle = moves => {
+  let movesObj = { "L": 0, "R": 0, "U": 0, "D": 0 };
+  for (let char of moves) {
+    movesObj[char]++;
+  }
+  if ((movesObj["L"] + -Math.abs(movesObj["R"]) === 0) && (movesObj["U"] + -Math.abs(movesObj["D"]) === 0)) {
+    return true
+  }
+  return false;
+};
+
+// Time complexity: O(n) because we iterate through the moves String
+// Space complexity: O(C) because we are only ever tracking 4 chars in movesObj
+
+// console.log(judgeCircles("UD")); // => true
+// console.log(judgeCircles("LL")); // => false
