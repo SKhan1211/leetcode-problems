@@ -188,4 +188,4 @@ function countingSort(arr, max) {
   return result;
 }
 
-console.log(countingSort([5, 2, 6, 8, 3], 8)); // => [2, 3, 5, 6, 8]
+// console.log(countingSort([5, 2, 6, 8, 3], 8)); // => [2, 3, 5, 6, 8]

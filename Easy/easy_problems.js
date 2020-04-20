@@ -599,3 +599,38 @@ function invertImage(A) {
 //   }
 //   return happyArr;
 // }
+
+function balancedStringSplit(str) {
+  // I need a way to split the string and check when all is equal
+  // Dividing into substrings is a must
+  // Counting left and right letters in substr, and if they match possibly I can use this
+  // Have a bigger counter that counts total number and is returned at the end 
+  // Helper method to test string count? -- Return boolean
+  let arr = [];
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 0; j < str.length; j++) {
+      if (RAndLCount(str.slice(i, j + 1))) {
+        arr.push(str.slice(i, j + 1))
+        i = j + 1;
+      }
+    }
+  }
+  
+  return arr.length;
+};
+
+function RAndLCount(str) {
+  let countHashObj = {};
+  for (let char of str) {
+    if (countHashObj[char]) countHashObj[char] += 1;
+    else countHashObj[char] = 1;
+  };
+  if (Object.values(countHashObj)[0] === Object.values(countHashObj)[1]) return true;
+  return false;
+};
+
+// Time complexity: O(n^3) because of nested loops and helper method nested iteration call
+// Space complexity: O(nlogn) because arr size depends on inputs
+
+console.log(balancedStringSplit("RLRRLLRLRL")); // => 4
+// console.log(RAndLCount("RL")); // => True
