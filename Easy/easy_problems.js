@@ -740,5 +740,39 @@ const judgeCircle = moves => {
 // Time complexity: O(n) because we iterate through the moves String
 // Space complexity: O(C) because we are only ever tracking 4 chars in movesObj
 
-// console.log(judgeCircles("UD")); // => true
-// console.log(judgeCircles("LL")); // => false
+// console.log(judgeCircle("UD")); // => true
+// console.log(judgeCircle("LL")); // => false
+// Alternative Solutions:
+// const judgeCircle = (moves) => {
+//   return moves.split('')
+//     .reduce((p, m) => [p[0] + (m === 'R') - (m === 'L'), p[1] + (m === 'U') - (m === 'D')], [0, 0])
+//     .join('') === '00';
+// };
+// var judgeCircle = function(moves) {
+//   let x = 0, y = 0;
+//   for (let i = 0; i < moves.length; i++) {
+//     switch (moves[i]) {
+//       case 'R':
+//         x++;
+//         break;
+//       case 'L':
+//         x--;
+//         break;
+//       case 'U':
+//         y++;
+//         break;
+//       case 'D':
+//         y--;
+//         break;
+//     }
+//   }
+//   return x === 0 && y === 0;
+// };
+
+function sortedSquares(A) {
+  return A.map(n => Math.abs(n) * Math.abs(n)).sort((a, b) => a - b);
+};
+// Time complexity: O(n) because of iteration and sorting
+// Space complexity: O(C) because no space is used just manipulated
+
+// console.log(sortedSquares([-4, -1, 0, 3, 10])); // => [0,1,9,16,100]
