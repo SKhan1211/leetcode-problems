@@ -880,3 +880,36 @@ function reverseString(s) {
 // Space Copmplexity: O(C) because the same input array is modified
 
 // console.log(reverseString(["h", "e", "l", "l", "o"])); // => ["o","l","l","e","h"]
+
+// Alternative Solutions:
+// var reverseString = function(s) {
+//   let i = 0, j = s.lenght - 1;
+//   while (i < j) {
+//     [s[i], s[j]] = [s[j], s[i]];
+//     i++;
+//     j--;
+//   };
+// };
+// var reverseString = function(s) {
+//   if (s.length === 1) return s;
+//   let p1 = Math.floor(s.length / 2) - 1;
+//   let p2 = s.length % 2 === 0 ? Math.floor(s.length / 2) : Math.floor(s.length / 2) + 1;
+//   while (p1 > 0) {
+//     [s[p1], s[p2]] = [s[p2], s[p1]];
+//     p1--;
+//     p2++;
+//   }
+//   return s;
+// };
+// var reverseString = function(s) {
+//   let len = s.length;
+//   if (!len || len === 1) return s;
+//   let l = 0, r = len - 1;
+//   while (l <= r) {
+//     let temp = s[l];
+//     s[l] = s[r];
+//     s[r] = temp;
+//     l++;
+//     r--;
+//   };
+// };
