@@ -850,4 +850,21 @@ function numUniqueEmails(emails) {
 // Time Complexity: O(n^2) because of nested loops
 // Space Complexity: O(n) because worst case it adds all letters
 
-console.log(numUniqueEmails(["test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"])); // => 2
+// console.log(numUniqueEmails(["test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com", "testemail+david@lee.tcode.com"])); // => 2
+
+// Alternative Solutions:
+// var numUniqueEmails = function(emails) {
+//   return (new Set(emails.map(email => {
+//     const [local, domain] = email.split('@');
+//     return local.split('+').shift().split('.').join('') + '@' + domain;
+//   }))).size;
+// };
+// var numUniqueEmails = function(emails) {
+//   const r = /(\.(?=[^@]+@))|(\+.+(?=@))/g;
+//   return new Set(emails.map((item) => {
+//     return item.replace(r, '');
+//   })).size;
+// };
+// var numUniqueEmails = function(emails) {
+//   return emails.reduce((s, e) => s.add(e.replace(/(\+.*(?=@)|(\.(?=.*@)))/g, '')), new Set()).size;
+// };
