@@ -967,4 +967,38 @@ function fib(N) {
   return fib(N - 1) + fib(N - 2);
 };
 
-console.log(fib(2)); // => 1;
+// Time Complexity: O(2^n) because of fib stacks
+// Space Complexity: O(n) because of fib stacks
+
+// console.log(fib(2)); // => 1;
+
+// Alternative Solutions:
+// var fib = function(N) {
+//   let memo = new Array(N + 1)
+//   memo[0] = 0;
+//   memo[1] = 1;
+//   for (let i = 2; i <= N; i++) {
+//     memo[i] = memo[i - 1] + memo[i - 2];
+//   };
+//   return memo[N];
+// }
+// var fib = function(N) {
+//   for (var A = 0, B = 1, i = 2; i <= N; i++) [A, B] = [B, A + B];
+//   return N < 2 ? N : B;
+// };
+// var fib = function(N) {
+//   if (N === 0 || N === 1) return N;
+
+//   let a = 0;
+//   let b = 1;
+//   let c;
+
+//   while (N > 1) {
+//     N--;
+//     c = a + b;
+//     a = b;
+//     b = c;
+//   };
+
+//   return b;
+// };
