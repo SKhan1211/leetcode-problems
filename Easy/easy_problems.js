@@ -933,7 +933,7 @@ function findLucky(arr) {
 // Time Complexity: O(n) because of looping
 // Space Complexity: O(n) because of numberCount object size dependant on array worst case
 
-console.log(findLucky([2, 2, 3, 4])); // => 2
+// console.log(findLucky([2, 2, 3, 4])); // => 2
 
 // Alternative Solutions:
 // var findLucky = function(arr) {
@@ -959,3 +959,12 @@ console.log(findLucky([2, 2, 3, 4])); // => 2
 //   : Math.max(...resultArr); 
 // }
 // var findLucky = arr => [...arr.reduce((hash, num) => hash.set(num, hash.get(num) + 1 || 1), new Map()).entries()].reduce((res, [key, val]) => res = key === val ? Math.max(res, val) : res, -1);
+
+function fib(N) {
+  if (N === 0) return 0;
+  else if (N === 1) return 1;
+
+  return fib(N - 1) + fib(N - 2);
+};
+
+console.log(fib(2)); // => 1;
