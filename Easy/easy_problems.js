@@ -935,5 +935,27 @@ function findLucky(arr) {
 
 console.log(findLucky([2, 2, 3, 4])); // => 2
 
-// Runtime: 48 ms, faster than 98.44 % of JavaScript online submissions for Find Lucky Integer in an Array.
-// Memory Usage: 34.6 MB, less than 100.00 % of JavaScript online submissions for Find Lucky Integer in an Array.
+// Alternative Solutions:
+// var findLucky = function(arr) {
+//   const map = new Map();
+//   for (x of arr) {
+//     map.has(x) ? map.set(x, map.get(x) + 1) : map.set(x, 1);
+//   };
+//   return Math.max(...arr.filter(e => map.get(e) === e), -1);
+// }
+// var findLucky = function(arr) {
+//   let table = new Map();
+//   let resultArr = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (table.has(arr[i])) table.set(arr[i], table.get(arr[i]) + 1);
+//     if (!table.has(arr[i])) table.set(arr[i], 1);
+//   };
+
+//   [...table].forEach(el => el[0] === el[1] ? resultArr.push(el[0]) : "");
+
+//   return resultArr.length === 1 ? resultArr[0] 
+//   : resultArr.length === 0 ? -1
+//   : Math.max(...resultArr); 
+// }
+// var findLucky = arr => [...arr.reduce((hash, num) => hash.set(num, hash.get(num) + 1 || 1), new Map()).entries()].reduce((res, [key, val]) => res = key === val ? Math.max(res, val) : res, -1);
