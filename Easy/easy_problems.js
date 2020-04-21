@@ -868,3 +868,15 @@ function numUniqueEmails(emails) {
 // var numUniqueEmails = function(emails) {
 //   return emails.reduce((s, e) => s.add(e.replace(/(\+.*(?=@)|(\.(?=.*@)))/g, '')), new Set()).size;
 // };
+
+function reverseString(s) {
+  for (let i = 0; i < Math.ceil(s.length / 2); i++) {
+    [s[i], s[s.length - i - 1]] = [s[s.length - i - 1], s[i]];
+  };
+  return s
+};
+
+// Time Complexity: O(n) because of our for loop
+// Space Copmplexity: O(C) because the same input array is modified
+
+// console.log(reverseString(["h", "e", "l", "l", "o"])); // => ["o","l","l","e","h"]
