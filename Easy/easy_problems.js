@@ -913,3 +913,27 @@ function reverseString(s) {
 //     r--;
 //   };
 // };
+
+function findLucky(arr) {
+  let luckyNumber = -1;
+  let numberCount = {};
+
+  arr.forEach(el => {
+    if (numberCount[el]) numberCount[el] += 1;
+    else numberCount[el] = 1;
+  });
+
+  for (let key in numberCount) {
+    if (numberCount[key] === parseInt(key) && parseInt(key) > luckyNumber) luckyNumber = key; 
+  };
+
+  return luckyNumber
+};
+
+// Time Complexity: O(n) because of looping
+// Space Complexity: O(n) because of numberCount object size dependant on array worst case
+
+console.log(findLucky([2, 2, 3, 4])); // => 2
+
+// Runtime: 48 ms, faster than 98.44 % of JavaScript online submissions for Find Lucky Integer in an Array.
+// Memory Usage: 34.6 MB, less than 100.00 % of JavaScript online submissions for Find Lucky Integer in an Array.
