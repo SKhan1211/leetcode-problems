@@ -1091,18 +1091,42 @@ function relativeSortArray(arr1, arr2) {
 //   return arr1;
 // };
 
-function singleNumber(arr) {
-  let countObj = {};
-  arr.forEach(el => {
-    if (countObj[el]) countObj[el]++;
-    else countObj[el] = 1;
-  });
-  for (let key in countObj) {
-    if (countObj[key] === 1) return key;
-  };
-};
+// function singleNumber(arr) {
+//   let countObj = {};
+//   arr.forEach(el => {
+//     if (countObj[el]) countObj[el]++;
+//     else countObj[el] = 1;
+//   });
+//   for (let key in countObj) {
+//     if (countObj[key] === 1) return key;
+//   };
+// };
 
 // Time Complexity: O(n) because of a single loop
 // Space Complexity: O(n) because of object creation
 
 console.log(singleNumber([2, 2, 1])); // => 1;
+
+// Additional Solutions:
+// function singleNumber(nums) {
+//   return nums.reduce((prev, curr) => prev ^ curr, 0);
+// }
+// function singleNumber(nums) {
+//   const map = {};
+//   for (let n of nums) {
+//     if (map[n] == null) map[n] = 0;
+//     map[n]++;
+//   };
+
+//   for (let n in map) {
+//     if (map[n] === 1) return Number(n);
+//   };
+// };
+// function singleNumber(nums) {
+//   let num = 0;
+//   for (let n of nums) {
+//     num ^= n;
+//   };
+//   return num;
+// }
+
