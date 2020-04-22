@@ -1002,3 +1002,45 @@ function fib(N) {
 
 //   return b;
 // };
+
+function relativeSortArray(arr1, arr2) {
+  // Initial naive thoughts are I can make a new array var, quickly scan arr2 for elements and push all matching ones
+  //  into new the arr from arr1
+
+  let sortedArr = [];
+
+  // Options are to do a nested loops and check all el against el in arr 2 OR
+  // I can just create a hash map with a count in the correct order
+  // Second idea still leads to O(n^2) runtime due to nested looping, but I like it because it'll be easier to keep track of count
+
+  let eleCount = new Map();
+
+  arr1.forEach(el => { // O(n)
+    if (eleCount.has(el)) eleCount.set(el, eleCount.get(el) + 1);
+    else eleCount.set(el, 1);
+  });
+
+  arr2.forEach(el => { // O(n)
+    if (eleCount.has(el)) { // O(C)
+      for (let i = 0; i < eleCount.get(el); i++) { // O(n)
+        sortedArr.push(el);
+      };
+    };
+  });
+
+  arr1.sort((a, b) => a - b).forEach(el => { // O(n)
+    if (!sortedArr.includes(el)) {
+      for (let i = 0; i < eleCount.get(el); i++) { // O(n)
+        sortedArr.push(el);
+      };
+    };
+  });
+
+  return sortedArr;
+};
+
+// Time Complexity: O(n^2) because of nesting
+// Space Complexity: O(n) due to use of Map
+
+console.log(relativeSortArray([2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19], [2, 1, 4, 3, 9, 6])); // => [22,28,8,6,17,44]
+console.log(relativeSortArray([28, 6, 22, 8, 44, 17], [22, 28, 8, 6])); // => [22,28,8,6,17,44]
