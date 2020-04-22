@@ -1090,3 +1090,19 @@ function relativeSortArray(arr1, arr2) {
 //   arr1.sort((a, b) => h[a] - h[b]);
 //   return arr1;
 // };
+
+function singleNumber(arr) {
+  let countObj = {};
+  arr.forEach(el => {
+    if (countObj[el]) countObj[el]++;
+    else countObj[el] = 1;
+  });
+  for (let key in countObj) {
+    if (countObj[key] === 1) return key;
+  };
+};
+
+// Time Complexity: O(n) because of a single loop
+// Space Complexity: O(n) because of object creation
+
+console.log(singleNumber([2, 2, 1])); // => 1;
