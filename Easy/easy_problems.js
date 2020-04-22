@@ -1042,5 +1042,51 @@ function relativeSortArray(arr1, arr2) {
 // Time Complexity: O(n^2) because of nesting
 // Space Complexity: O(n) due to use of Map
 
-console.log(relativeSortArray([2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19], [2, 1, 4, 3, 9, 6])); // => [22,28,8,6,17,44]
-console.log(relativeSortArray([28, 6, 22, 8, 44, 17], [22, 28, 8, 6])); // => [22,28,8,6,17,44]
+// console.log(relativeSortArray([2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19], [2, 1, 4, 3, 9, 6])); // => [22,28,8,6,17,44]
+// console.log(relativeSortArray([28, 6, 22, 8, 44, 17], [22, 28, 8, 6])); // => [22,28,8,6,17,44]
+
+// Additional Solutions:
+// var relativeSortArray = function(arr1, arr2) {
+//   const countMapping = {};
+//   const solArr = [];
+//   const restArr = [];
+
+//   for (const val of arr2) {
+//     countMapping[val] = 0;
+//   };
+
+//   for (const val of arr1) {
+//     if (countMapping[val] >= 0) {
+//       countMapping[val]++;
+//     } else {
+//       restArr.push(val);
+//     };
+//   };
+
+//   for (const val of arr2) {
+//     for (let i = 0; i < countMapping[val]; i++) {
+//       solArr.push(val);
+//     };
+//   };
+
+//   return [...solArr, ...restArr.sort((a, b) => a > b ? 1 : -1)];
+// };
+// var relativeSortArray = function(arr1, arr2) {
+//   const lookup = new Map();
+//   const N = arr2.length;
+//   arr2.forEach((a, i) => {
+//     lookup.set(a, i);
+//   });
+//   return arr1.sort((a, b) => {
+//     a = lookup.has(a) ? lookup.get(a) : N + a;
+//     b = lookup.has(b) ? lookup.get(b) : N + b;
+//     return a - b;
+//   });
+// };
+// var relativeSortArray = function(arr1, arr2) {
+//   let h = {};
+//   for (let i = 0; i < arr2.length; i++) h[arr2[i]] = 1;
+//   for (const i of arr1) if (!(i in h)) h[i] = 1000 + 1;
+//   arr1.sort((a, b) => h[a] - h[b]);
+//   return arr1;
+// };
