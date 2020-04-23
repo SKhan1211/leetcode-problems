@@ -1297,3 +1297,54 @@ function findOcurrences(text, first, second) {
 //   };
 //   return res;
 // };
+
+function islandPerimeter(grid) {
+  let count = 0;
+  grid.forEach((row, _idx1) => {
+    row.forEach((col, idx2) => {
+      if (col === 1) {
+        if ((row[idx2 - 1]) === 0 ||
+          (row[idx2 - 1]) === undefined
+        ) count++;
+        if ((row[idx2 + 1]) === 0 ||
+          (row[idx2 + 1]) === undefined
+        ) count ++;
+      };
+    });
+  });
+  
+  let transposedGrid = grid[0].map((col, idx2) => grid.map((row, idx1) => row[idx2]));
+
+  transposedGrid.forEach((row, _idx1) => {
+    row.forEach((col, idx2) => {
+      if (col === 1) {
+        if ((row[idx2 - 1]) === 0 ||
+          (row[idx2 - 1]) === undefined
+        ) count++;
+        if ((row[idx2 + 1]) === 0 ||
+          (row[idx2 + 1]) === undefined
+        ) count++;
+      };
+    });
+  });
+
+  return count;
+};
+
+// Time Complexity: O(n^2) because of nesting loops
+// Space Complexity: O(n) because we make a transposed copy
+
+// console.log(islandPerimeter([[0, 1, 0, 0], [1, 1, 1, 0], [0, 1, 0, 0], [1, 1, 0, 0]])); // => 16
+// console.log(islandPerimeter([[0, 0, 0], [0, 1, 0], [0, 0, 0]]))
+// [[0, 1, 0, 0],
+//   [1, 1, 1, 0],
+//   [0, 1, 0, 0],
+//   [1, 1, 0, 0]]
+
+// [
+//   [0, 1, 0, 1],
+//   [1, 1, 1, 1],
+//   [0, 1, 0, 0],
+//   [0, 0, 0, 0],
+// ]
+
