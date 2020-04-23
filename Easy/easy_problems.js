@@ -1179,3 +1179,33 @@ function transpose(A) {
 //   });
 //   return result;
 // };
+
+function findWords(words) {
+  // Initial thoughts and naive solution approach is map all keys on a row to a obj hash
+  // Then check if every word matches a particular row, if so then return it else dont
+
+  let matchingWords = [];
+  let keyRows = {
+    1: ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+    2: ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
+    3: ["Z", "X", "C", "V", "B", "N", "M"]
+  };
+
+  words.forEach(word => {
+    for (key in keyRows) {
+      let match = true;
+      word.split('').forEach(char => {
+        if (!keyRows[key].includes(char.toUpperCase())) match = false;
+      });
+      if (match) matchingWords.push(word);
+    };
+  });
+
+
+  return matchingWords;
+};
+
+// Time Complexity: O(n^3) because of triple nesting
+// Space Complexity: O(n) because all could be a match worst case
+
+// console.log(findWords(["Hello", "Alaska", "Dad", "Peace"])); // => ["Alaska", "Dad"]
