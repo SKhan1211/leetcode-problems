@@ -1149,5 +1149,33 @@ function transpose(A) {
 // Time Complexity: O(n^2) due to nested loops
 // Space Complexity: O(n) because transposed and newRow size is dependent on input
 
-console.log(transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9]])); // => [[1,4,7],[2,5,8],[3,6,9]]
-console.log(transpose([[1, 2, 3], [4, 5, 6]])); // => [[1,4],[2,5]]
+// console.log(transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9]])); // => [[1,4,7],[2,5,8],[3,6,9]]
+// console.log(transpose([[1, 2, 3], [4, 5, 6]])); // => [[1,4],[2,5]]
+
+// Alternative Solutions:
+// var transpose = function(A) {
+//   return A[0].map((_, i) => A.map(b => b[i]));
+// };
+// var transpose = function(A) {
+//   let result = [];
+//   let rowLen = A.length;
+//   let colLen = A[0].length;
+//   for(let i = 0; i < rowLen; i++) {
+//     for (let j = 0; j < colLen; j++) {
+//       if (!result[j]) result[j] = [];
+//       result [j][i] = A[i][j];
+//     };
+//   };
+//   return result;
+// }
+// var transpose = function(A) {
+//   let result = [];
+//   A.forEach((el, i) => {
+//     el.forEach((elIn, iIn) => {
+//       if (i === 0) {
+//         result.push([elIn]);
+//       } else result[iIn].push(elIn);
+//     });
+//   });
+//   return result;
+// };
