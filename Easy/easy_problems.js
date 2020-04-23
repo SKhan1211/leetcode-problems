@@ -1105,7 +1105,7 @@ function relativeSortArray(arr1, arr2) {
 // Time Complexity: O(n) because of a single loop
 // Space Complexity: O(n) because of object creation
 
-console.log(singleNumber([2, 2, 1])); // => 1;
+// console.log(singleNumber([2, 2, 1])); // => 1;
 
 // Additional Solutions:
 // function singleNumber(nums) {
@@ -1130,3 +1130,24 @@ console.log(singleNumber([2, 2, 1])); // => 1;
 //   return num;
 // }
 
+function transpose(A) {
+  let transposed = [];
+
+  A[0].forEach((row, idx1) => {
+    let newRow = [];
+
+    A.forEach((col, idx2) => {
+      newRow.push(A[idx2][idx1])
+    });
+
+    transposed.push(newRow);
+  });
+
+  return transposed;
+};
+
+// Time Complexity: O(n^2) due to nested loops
+// Space Complexity: O(n) because transposed and newRow size is dependent on input
+
+console.log(transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9]])); // => [[1,4,7],[2,5,8],[3,6,9]]
+console.log(transpose([[1, 2, 3], [4, 5, 6]])); // => [[1,4],[2,5]]
