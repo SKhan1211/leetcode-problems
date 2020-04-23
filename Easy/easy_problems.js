@@ -1260,7 +1260,40 @@ function findOcurrences(text, first, second) {
 // Time Complexity: O(n) because of single n + n loops
 // Space Complexity: O(logn) because we only put in one word into result for every match to our inputs
 
-console.log(findOcurrences("alice is a good girl she is a good student", "a", "good")); // => ["girl","student"]
-console.log(findOcurrences("ypkk lnlqhmaohv lnlqhmaohv lnlqhmaohv ypkk ypkk ypkk ypkk ypkk ypkk lnlqhmaohv lnlqhmaohv lnlqhmaohv lnlqhmaohv ypkk ypkk ypkk lnlqhmaohv lnlqhmaohv ypkk",
-"lnlqhmaohv",
-  "ypkk")); // => ["ypkk","ypkk"]
+// console.log(findOcurrences("alice is a good girl she is a good student", "a", "good")); // => ["girl","student"]
+// console.log(findOcurrences("ypkk lnlqhmaohv lnlqhmaohv lnlqhmaohv ypkk ypkk ypkk ypkk ypkk ypkk lnlqhmaohv lnlqhmaohv lnlqhmaohv lnlqhmaohv ypkk ypkk ypkk lnlqhmaohv lnlqhmaohv ypkk",
+// "lnlqhmaohv",
+//   "ypkk")); // => ["ypkk","ypkk"]
+
+// Alternative Solutions:
+// var findOcurrences = function (text, first, second) {
+//   let result = [];
+//   text = text.split(" ");
+  
+//   for (let i = 0; i < text.length - 2; i++) {
+//     if (text[i] === first && text[i + a] === second) result.push(text[i + 2]);
+//   };
+
+//   return result;
+// };
+// const findOcurrences = (text, first, second) => {
+//   const regex = new RegExp(`(?<=\\b${first} ${second}\\s)\\w+`, 'g');
+//   return text.match(regex) || [];
+// };
+// var findOcurrences = function (text, first, second) {
+//   text = text.split(" ");
+//   let res = [];
+//   while (true) {
+//     let idx1 = text.indexOf(first);
+//     let idx2 = text.indexOf(second);
+//     if (idx1 == -1 || idx2 == -1) break;
+//     if (idx1 > idx2) text.splice(idx2, 1, "");
+//     else if (idx2 - idx1 > 1) text.splice(idx1, 1, "");
+//     else if (idx2 - idx1 == 1) {
+//       if (text[idx2 + 1] !== undefined) res.push(text[idx2 + 1]);
+//       text.splice(idx1, 1, "");
+//       text.splice(idx2, 1, "");
+//     };
+//   };
+//   return res;
+// };
