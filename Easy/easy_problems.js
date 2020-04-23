@@ -1243,3 +1243,24 @@ function findWords(words) {
 // var findWords = function(words) {
 //   return words.filter(w => /^([qwertyuiop]+|[asdfghjkl]+|)$i.test(w));
 // };
+
+function findOcurrences(text, first, second) {
+  // Initial thoughts is splitting text into an array and iterating over, if word matches first then check matching of second with one idx up,
+  // if a match then add in third
+  let result = [];
+  let textArr = text.split(' ');
+
+  for(let i = 0; i < textArr.length; i++) {
+    if (textArr[i] === first && textArr[i + 1] === second && textArr[i + 2]) result.push(textArr[i + 2]);
+  };
+
+  return result;
+};
+
+// Time Complexity: O(n) because of single n + n loops
+// Space Complexity: O(logn) because we only put in one word into result for every match to our inputs
+
+console.log(findOcurrences("alice is a good girl she is a good student", "a", "good")); // => ["girl","student"]
+console.log(findOcurrences("ypkk lnlqhmaohv lnlqhmaohv lnlqhmaohv ypkk ypkk ypkk ypkk ypkk ypkk lnlqhmaohv lnlqhmaohv lnlqhmaohv lnlqhmaohv ypkk ypkk ypkk lnlqhmaohv lnlqhmaohv ypkk",
+"lnlqhmaohv",
+  "ypkk")); // => ["ypkk","ypkk"]
