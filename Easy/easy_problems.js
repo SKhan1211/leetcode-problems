@@ -1348,3 +1348,83 @@ function islandPerimeter(grid) {
 //   [0, 0, 0, 0],
 // ]
 
+// Alternative Solutions:
+// var islandPerimeter = function(grid) {
+//   const rows = grid.length;
+//   const cols = grid[0].length;
+
+//   var perimeter = 0;
+
+//   for (var row = 0; row < rows; row++) {
+//     for (var col = 0; col < cols; col++) {
+//       if (!grid[row][col]) continue;
+
+//       perimeter += 4;
+
+//       if (row > 0 && grid[row - 1][col]) perimeter--;
+//       if (col > 0 && grid[row[col - 1]]) perimeter --;
+//       if (row < rows - 1 && grid[row + 1][col]) perimeter--;
+//       if (col < cols - 1 && grid[row][col + 1]) perimeter--;
+//     };
+//   };
+
+//   return perimeter;
+// };
+// const islandPerimter = (grid) => {
+//   const rows = grid.length, columns = grid[0].length;
+  
+//   let count = 0;
+//   for (let row = 0; row < rows; row++) {
+//     for (let col = 0; col < columns; col++) {
+//       count += borders(grid, row, col);
+//     };
+//   };
+
+//   return count;
+// };
+// const borders = (grid, row, col) => {
+//   let count = 0;
+//   if (grid[row][col] === 0) {
+//     if (row > 0) count += grid[row - 1][col];
+//     if (row < grid.length - 1) count += grid[row + 1][col];
+//     if (col > 0) count += grid[row][col - 1];
+//     if (col < grid[0].length - 1) count += grid[row][col + 1];
+//   } else {
+//     if (row === 0) count += 1;
+//     if (row === grid.length - 1) count += 1;
+//     if (col === 0) count += 1;
+//     if (col === grid[0].length - 1) count += 1;
+//   };
+
+//   return count;
+// }
+// var islandPerimeter = function(grid) {
+//   let per = 0;
+
+//   for (let i = 0; i < grid.length; i++) {
+//     for (let j = 0; j < grid[i].length; j++) {
+//       if (grid[i][j] == 1) per = per + check_all(i, j, grid);
+//     };
+//   };
+
+//   return per;
+// };
+// function check_up(i, j, grid) {
+//   if (i === 0) return 1
+//   else return (grid[i - 1][j] - 1) ** 2;
+// };
+// function check_left(i, j, grid) {
+//   if (j == 0) return 1;
+//   else return (grid[i][j - 1] - 1) ** 2;
+// };
+// function check_right(i, j, grid) {
+//   if (j == grid[0].length - 1) return 1;
+//   else return (grid[i][j + 1] - 1) ** 2;
+// };
+// function check_down(i, j, grid) {
+//   if (i == grid.length - 1) return 1;
+//   else return (grid[i + 1][j] - 1) ** 2;
+// };
+// function check_all(i, j, grid) {
+//   return check_up(i, j, grid) + check_left(i, j, grid) + check_right(i, j, grid) + check_down(i, j, grid);
+// };
