@@ -1493,11 +1493,11 @@ function reverseInt(x) {
   else return -parseInt(x.toString().split('').reverse().join(''));
 };
 
-console.log(reverseInt(123)); // => 321
-console.log(reverseInt(-123)); // => -321
+// console.log(reverseInt(123)); // => 321
+// console.log(reverseInt(-123)); // => -321
 
 function countPrimes(n) {
-
-};
+  // https://leetcode.com/problems/count-primes/
+}
 
 console.log(countPrimes(10)); // => 4
