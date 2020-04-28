@@ -1428,3 +1428,31 @@ function islandPerimeter(grid) {
 // function check_all(i, j, grid) {
 //   return check_up(i, j, grid) + check_left(i, j, grid) + check_right(i, j, grid) + check_down(i, j, grid);
 // };
+
+function countCharacters(words, chars) {
+  // Naive solution is to iterate over array and check if it matches chars, if it does remove those chars and dd
+  // el.length to a count
+
+  let count = 0;
+
+
+  words.forEach(word => {
+    let matchingChars = 0;
+    let newChars = chars;
+    for (let char of word) {
+      if (newChars.includes(char)) {
+        ++matchingChars;
+        let leftHalf = newChars.slice(0, newChars.indexOf(char));
+        let rightHalf = newChars.slice(newChars.indexOf(char) + 1);
+        newChars = leftHalf + rightHalf;
+      }
+    }
+    if (matchingChars === word.length) {
+      count += word.length;
+    };
+  });
+
+  return count;
+};
+
+console.log(countCharacters(["cat", "bt", "hat", "tree"], "atach")); // => 6
