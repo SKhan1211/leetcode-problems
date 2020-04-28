@@ -1487,3 +1487,9 @@ function countCharacters(words, chars) {
 // var countCharacters = function(words, chars) {
 //   return words.reduce((acc, cur) => [...cur].every(char => chars.includes(char) && cur.match(new RegExp(`${char}`, 'g')).length <= chars.match(new RegExp(`${char}`, 'g')).length) ? acc + cur.length : acc, 0);
 // }
+
+function reverse(x) {
+
+};
+
+console.log(reverse(123)); // => 321
