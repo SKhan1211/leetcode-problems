@@ -1495,3 +1495,9 @@ function reverseInt(x) {
 
 console.log(reverseInt(123)); // => 321
 console.log(reverseInt(-123)); // => -321
+
+function countPrimes(n) {
+
+};
+
+console.log(countPrimes(10)); // => 4
