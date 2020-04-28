@@ -1488,8 +1488,10 @@ function countCharacters(words, chars) {
 //   return words.reduce((acc, cur) => [...cur].every(char => chars.includes(char) && cur.match(new RegExp(`${char}`, 'g')).length <= chars.match(new RegExp(`${char}`, 'g')).length) ? acc + cur.length : acc, 0);
 // }
 
-function reverse(x) {
-
+function reverseInt(x) {
+  if (x > 0) return parseInt(x.toString().split('').reverse().join(''));
+  else return -parseInt(x.toString().split('').reverse().join(''));
 };
 
-console.log(reverse(123)); // => 321
+console.log(reverseInt(123)); // => 321
+console.log(reverseInt(-123)); // => -321
