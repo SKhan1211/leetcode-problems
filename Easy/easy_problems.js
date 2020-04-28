@@ -1455,4 +1455,35 @@ function countCharacters(words, chars) {
   return count;
 };
 
-console.log(countCharacters(["cat", "bt", "hat", "tree"], "atach")); // => 6
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+// console.log(countCharacters(["cat", "bt", "hat", "tree"], "atach")); // => 6
+
+// Alternative Solutions:
+// const countCharacters = (words, chars) => (
+//   words.reduce((cnt, word, idx) => {
+//     for (const c of [...chars]) word = word.replace(c, '');
+//     return cnt + (0 === word.length ? words[idx].length : 0);
+//   }, 0)
+// );
+// var countCharacters = function(words, chars) {
+//   return words.filter(word => {
+//     let charsRemain = chars.split("");
+//     let correctWord = true;
+
+//     word.split('').forEach(letter => {
+//       if (!correctWord) return;
+//       if (charsRemain.includes(letter)) {
+//         charsRemain.splice(charsRemain.indexOf(letter), 1);
+//       } else {
+//         correctWord = false;
+//       };
+//     });
+
+//     return correctWord;
+//   }).join('').length;
+// };
+// var countCharacters = function(words, chars) {
+//   return words.reduce((acc, cur) => [...cur].every(char => chars.includes(char) && cur.match(new RegExp(`${char}`, 'g')).length <= chars.match(new RegExp(`${char}`, 'g')).length) ? acc + cur.length : acc, 0);
+// }
