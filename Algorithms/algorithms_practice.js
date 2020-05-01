@@ -211,3 +211,20 @@ function fib(n, memo = {}) {
 };
 
 // console.log(fib(6)); // => 8
+
+function lucasNumberMemo(n, memo = {}) {
+  if (n in memo) return memo[n];
+  if (n === 0) return 2;
+  else if (n === 1) return 1;
+
+  memo[n] = lucasNumberMemo(n - 1, memo) + lucasNumberMemo(n - 2, memo);
+  return memo[n]
+};
+
+// console.log(lucasNumberMemo(4)); // => 4
+
+function minChange(coins, amount, memo = {}) {
+  // Taking my 
+};
+
+console.log(minChange[1, 2, 5], 11); // => 3 
