@@ -1500,4 +1500,31 @@ function countPrimes(n) {
   // https://leetcode.com/problems/count-primes/
 }
 
-console.log(countPrimes(10)); // => 4
+// console.log(countPrimes(10)); // => 4
+
+function createPackage(small, big, goal) { // 4, 1, 10
+  let bigWeight = 5;
+  let leftOver = goal; // 10
+
+  let bigCount = big; // 1
+  while (leftOver > 0 || bigCount > 0) {
+    if (leftOver - bigWeight < 0) break;
+    leftOver = leftOver - bigWeight
+    bigCount--;
+  }
+
+  // Figure out how much total weight I have in big goal
+  // Subtract that weight from the leftOver, if it ends up using it all up return 0
+
+  // If leftOver weight has weight left, subtract small weight from it.
+  // Cases:
+  // Small weight is equal to leftOver, return small
+  // Small weight is bigger than left Over
+  // Small weight is less than left Over, return -1
+  if (leftOver )
+  if (leftOver - small === 0) return small;
+  else if (leftOver > small) return -1;
+  else return leftOver;
+}
+
+console.log(createPackage(4, 1, 10));

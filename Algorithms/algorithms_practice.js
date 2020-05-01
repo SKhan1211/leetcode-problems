@@ -224,7 +224,11 @@ function lucasNumberMemo(n, memo = {}) {
 // console.log(lucasNumberMemo(4)); // => 4
 
 function minChange(coins, amount, memo = {}) {
-  // Taking my 
+  let minCount = null;
+  let currentCount = 0;
+
+
+  return minCount;
 };
 
 console.log(minChange[1, 2, 5], 11); // => 3 
