@@ -189,3 +189,9 @@ function countingSort(arr, max) {
 }
 
 // console.log(countingSort([5, 2, 6, 8, 3], 8)); // => [2, 3, 5, 6, 8]
+
+function factorial(n) {
+
+}
+
+console.log(factorial(6)); // 720
