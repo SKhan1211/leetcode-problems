@@ -1527,4 +1527,20 @@ function createPackage(small, big, goal) { // 4, 1, 10
   else return leftOver;
 }
 
-console.log(createPackage(4, 1, 10));
+// console.log(createPackage(4, 1, 10));
+
+// Please write a program that prints the numbers from 1 to 100. But for multiples 
+// of three print “Research” instead of the number and for the multiples of five print 
+// “Square”. For numbers which are multiples of both three and five print “Research Square”
+// (note the space).*
+
+function printNumsWithRules() {
+  for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) console.log("Research Square");
+    else if (i % 3 === 0) console.log("Research");
+    else if (i % 5 === 0) console.log("Square");
+    else console.log(i);
+  }
+};
+
+// printNumsWithRules();
