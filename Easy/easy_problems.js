@@ -1557,14 +1557,24 @@ function judgeSquareSum(c) {
   // etc.
 
   // Naive approach:
-  for (let i = 1; i < c; i++) {
-    for (let j = 1; j < c; j++) {
-      if ((i ** i) + (j * j) === c) return true; 
-    };
-  };
+  // for (let i = 0; i <= c; i++) { 
+  //   for (let j = 0; j <= c; j++) { 
+  //     if ((i * i) + (j * j) === c) return true; 
+  //   };
+  // };
+  if (c === 0) return true;
+
+  let currentLeftover = c; 1
+  for (let i = 0; i < c; i++) {
+    currentLeftover -= i * i; 1
+    if (Math.ceil(currentLeftover / 2) * Math.ceil(currentLeftover / 2) === currentLeftover) return true
+    currentLeftover = c;
+  }
 
   return false;
 };
 
 console.log(judgeSquareSum(5)); // => True
 console.log(judgeSquareSum(3)); // => False
+console.log(judgeSquareSum(9)); // => True
+console.log(judgeSquareSum(1)); // => True
