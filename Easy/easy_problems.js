@@ -1544,3 +1544,10 @@ function printNumsWithRules() {
 };
 
 // printNumsWithRules();
+
+function judgeSquareSum(c) {
+
+}
+
+console.log(judgeSquareSum(5)); // => True
+console.log(judgeSquareSum(3)); // => False
