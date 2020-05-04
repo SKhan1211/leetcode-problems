@@ -1546,8 +1546,25 @@ function printNumsWithRules() {
 // printNumsWithRules();
 
 function judgeSquareSum(c) {
+  // I know I take in a number
+  // I know the 2 numbers I can multiply must be less than c
+  // Nested loops might be a good naive approach
+  // I will iterate from 1 - c adding 1 everytime
 
-}
+  // 1 * 1, 1 * 1
+  // 1 * 1, 2 * 2
+  // 1 * 1, 3 * 3
+  // etc.
+
+  // Naive approach:
+  for (let i = 1; i < c; i++) {
+    for (let j = 1; j < c; j++) {
+      if ((i ** i) + (j * j) === c) return true; 
+    };
+  };
+
+  return false;
+};
 
 console.log(judgeSquareSum(5)); // => True
 console.log(judgeSquareSum(3)); // => False
