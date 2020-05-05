@@ -1661,12 +1661,6 @@ function thirdMax(nums) {
   // -- Side note, I may be able to filter out all elements that are not unique and then pick out the number from there depending on problem criteria
 
   let biggest = null;
-  if (nums.length < 3) {
-    for (let i = 0; i < nums.length; i++) {
-      if (!biggest || nums[i] > biggest) biggest = nums[i];
-    }
-    return biggest;
-  }
 
   let count = 0;
   for (let i = 0; i < nums.length; i++) {
@@ -1675,9 +1669,20 @@ function thirdMax(nums) {
     if (count === 3) break;
   }
 
-  return biggest;
+  if (count < 3 || nums.length < 3) {
+    for (let i = 0; i < nums.length; i++) {
+      if (!biggest || nums[i] > biggest) biggest = nums[i];
+    }
+    return biggest;
+  } else return biggest;
 };
 
-console.log(thirdMax([3, 2, 1])); // => 1
-console.log(thirdMax([1, 2])); // => 2
-console.log(thirdMax([2, 2, 3, 1])); // => 1
+// console.log(thirdMax([3, 2, 1])); // => 1
+// console.log(thirdMax([1, 2])); // => 2
+// console.log(thirdMax([2, 2, 3, 1])); // => 1
+
+function lengthOfLastWord(s) {
+
+};
+
+console.log(lengthOfLastWord("Hello World")); //=> 5
