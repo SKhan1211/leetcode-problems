@@ -1652,15 +1652,15 @@ function thirdMax(nums) {
   // If nums length isnt 3, then return the biggest inside num
   // otherwise we can pick out the third distinct number with a set tracking if its distinct
 
-  // Instantiate var biggest
-  // If nums length less than 3, var biggest can become biggest after iterating and return
+  // Instantiate var biggest [x]
+  // If nums length less than 3, var biggest can become biggest after iterating and return [x]
   // Instantiate new set
   // Iterate over array and add to set as you go long, checking to make sure set does not include
   // The number you are on, 
     // -Figure out approach to constantly keep checking if set has a number, if it does go to the next one otherwise return that number
+  // -- Side note, I may be able to filter out all elements that are not unique and then pick out the number from there depending on problem criteria
 
   let biggest = null;
-
   if (nums.length < 3) {
     for (let i = 0; i < nums.length; i++) {
       if (!biggest || nums[i] > biggest) biggest = nums[i];
@@ -1668,6 +1668,14 @@ function thirdMax(nums) {
     return biggest;
   }
 
+  let count = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (biggest !== nums[i]) { biggest = nums[i]; count++ };
+
+    if (count === 3) break;
+  }
+
+  return biggest;
 };
 
 console.log(thirdMax([3, 2, 1])); // => 1
