@@ -1644,5 +1644,32 @@ function judgeSquareSum(c) {
 // Time complexity: O(n) because of single loop
 // Space complexity: O(c) because no storage is dependant on input
 
-console.log(canPlaceFlowers([1, 0, 0, 0, 1], 1)); // => True
-console.log(canPlaceFlowers([1, 0, 0, 0, 1], 2)); // => False
+// console.log(canPlaceFlowers([1, 0, 0, 0, 1], 1)); // => True
+// console.log(canPlaceFlowers([1, 0, 0, 0, 1], 2)); // => False
+
+function thirdMax(nums) {
+  // Naive brute force approach is to iterate over the array and pick out the third number
+  // If nums length isnt 3, then return the biggest inside num
+  // otherwise we can pick out the third distinct number with a set tracking if its distinct
+
+  // Instantiate var biggest
+  // If nums length less than 3, var biggest can become biggest after iterating and return
+  // Instantiate new set
+  // Iterate over array and add to set as you go long, checking to make sure set does not include
+  // The number you are on, 
+    // -Figure out approach to constantly keep checking if set has a number, if it does go to the next one otherwise return that number
+
+  let biggest = null;
+
+  if (nums.length < 3) {
+    for (let i = 0; i < nums.length; i++) {
+      if (!biggest || nums[i] > biggest) biggest = nums[i];
+    }
+    return biggest;
+  }
+
+};
+
+console.log(thirdMax([3, 2, 1])); // => 1
+console.log(thirdMax([1, 2])); // => 2
+console.log(thirdMax([2, 2, 3, 1])); // => 1
