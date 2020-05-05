@@ -1562,14 +1562,17 @@ function judgeSquareSum(c) {
   //     if ((i * i) + (j * j) === c) return true; 
   //   };
   // };
-  if (c === 0) return true;
-
-  let currentLeftover = c; 1
-  for (let i = 0; i < c; i++) {
-    currentLeftover -= i * i; 1
-    if (Math.ceil(currentLeftover / 2) * Math.ceil(currentLeftover / 2) === currentLeftover) return true
-    currentLeftover = c;
+  
+  if (Math.trunc(Math.sqrt(c)) == Math.sqrt(c)) {
+    return true;
   }
+  
+  for (let i = 0; i < Math.sqrt(c); i++) {
+    let b = Math.trunc(Math.sqrt(c - i * i));
+    if (b * b + i * i == c) {
+      return true;
+    };
+  };
 
   return false;
 };
