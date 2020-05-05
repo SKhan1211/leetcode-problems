@@ -1596,14 +1596,27 @@ function canPlaceFlowers(flowerbed, n) {
 
   if (n < 1) return true;
 
-  let full = true;
-  while (full) { 
-    for (let i = 0; i < flowerbed.length; i++) {
-      if (flowerbed[i + 1] === 0 && flowerbed[i - 1] === 0 && flowerbed[i] === 0) {
+  // let full = true;
+  // while (full) { 
+  //   for (let i = 0; i < flowerbed.length; i++) {
+  //     if (flowerbed[i + 1] === 0 && flowerbed[i - 1] === 0 && flowerbed[i] === 0) {
+  //       flowerbed[i] = 1;
+  //       full = false;
+  //       n--;
+  //       if (n === 0) break;
+  //     }
+  //   }
+  // }
+
+  // O(N) solution
+  for (let i = 0; i < flowerbed.length; i++) {
+    if (flowerbed[i] === 0) {
+      if ((flowerbed[i - 1] === 0 || flowerbed[i - 1] === undefined)
+        && (flowerbed[i + 1] === 0 || flowerbed[i + 1] === undefined)
+      ) {
         flowerbed[i] = 1;
-        full = false;
         n--;
-        if (n === 0) break;
+        if (n < 1) break;
       }
     }
   }
@@ -1615,3 +1628,4 @@ function canPlaceFlowers(flowerbed, n) {
 console.log(canPlaceFlowers([1, 0, 0, 0, 1], 1)); // => True
 console.log(canPlaceFlowers([1, 0, 0, 0, 1], 2)); // => False
 console.log(canPlaceFlowers([1, 0, 0, 0, 1, 0, 1], 1)); // => True
+console.log(canPlaceFlowers([0, 0, 1, 0, 0], 1)); // => True
