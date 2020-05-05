@@ -1585,47 +1585,64 @@ function judgeSquareSum(c) {
 // console.log(judgeSquareSum(9)); // => True
 // console.log(judgeSquareSum(1)); // => True
 
-function canPlaceFlowers(flowerbed, n) {
-  // I'm looking for a [1, 0, 1, 0, 1, 0] type situation to ensure
-  // my n flowers can be planted
+// function canPlaceFlowers(flowerbed, n) {
+//   // I'm looking for a [1, 0, 1, 0, 1, 0] type situation to ensure
+//   // my n flowers can be planted
 
-  // Brute force approach:
-  // Iterate over the array, if there are no adjacent 1's next to a 0 aka (i - 1 === 0) (i + 1 === 0)
-  // i can turn i = 1, and do n - 1
-  // if at the end n is 0, return true, else return false
+//   // Brute force approach:
+//   // Iterate over the array, if there are no adjacent 1's next to a 0 aka (i - 1 === 0) (i + 1 === 0)
+//   // i can turn i = 1, and do n - 1
+//   // if at the end n is 0, return true, else return false
 
-  if (n < 1) return true;
+//   if (n < 1) return true;
 
-  // let full = true;
-  // while (full) { 
-  //   for (let i = 0; i < flowerbed.length; i++) {
-  //     if (flowerbed[i + 1] === 0 && flowerbed[i - 1] === 0 && flowerbed[i] === 0) {
-  //       flowerbed[i] = 1;
-  //       full = false;
-  //       n--;
-  //       if (n === 0) break;
-  //     }
-  //   }
-  // }
+//   // let full = true;
+//   // while (full) { 
+//   //   for (let i = 0; i < flowerbed.length; i++) {
+//   //     if (flowerbed[i + 1] === 0 && flowerbed[i - 1] === 0 && flowerbed[i] === 0) {
+//   //       flowerbed[i] = 1;
+//   //       full = false;
+//   //       n--;
+//   //       if (n === 0) break;
+//   //     }
+//   //   }
+//   // }
 
-  // O(N) solution
-  for (let i = 0; i < flowerbed.length; i++) {
-    if (flowerbed[i] === 0) {
-      if ((flowerbed[i - 1] === 0 || flowerbed[i - 1] === undefined)
-        && (flowerbed[i + 1] === 0 || flowerbed[i + 1] === undefined)
-      ) {
-        flowerbed[i] = 1;
-        n--;
-        if (n < 1) break;
-      }
-    }
-  }
+//   // O(N) solution
+//   for (let i = 0; i < flowerbed.length; i++) {
+//     if (flowerbed[i] === 0) {
+//       if ((flowerbed[i - 1] === 0 || flowerbed[i - 1] === undefined)
+//         && (flowerbed[i + 1] === 0 || flowerbed[i + 1] === undefined)
+//       ) {
+//         flowerbed[i] = 1;
+//         n--;
+//         if (n < 1) break;
+//       }
+//     }
+//   }
 
-  if (n === 0) return true;
-  else return false;
-};
+//   if (n === 0) return true;
+//   else return false;
+// };
+
+// var canPlaceFlowers = function (flowerbed, n) {
+//   let current = 0; const size = flowerbed.length;
+//   for (var i = 0; i <= size; i++) {
+//     if (i < size && flowerbed[i] == 0) {
+//       current++;
+//       if (i == 0) current++;
+//       if (i == size - 1) current++;
+//     } else {
+//       n -= Math.trunc((current - 1) / 2);
+//       if (n <= 0) return true;
+//       current = 0;
+//     }
+//   }
+//   return false;
+// };
+
+// Time complexity: O(n) because of single loop
+// Space complexity: O(c) because no storage is dependant on input
 
 console.log(canPlaceFlowers([1, 0, 0, 0, 1], 1)); // => True
 console.log(canPlaceFlowers([1, 0, 0, 0, 1], 2)); // => False
-console.log(canPlaceFlowers([1, 0, 0, 0, 1, 0, 1], 1)); // => True
-console.log(canPlaceFlowers([0, 0, 1, 0, 0], 1)); // => True
