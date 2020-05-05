@@ -1577,7 +1577,17 @@ function judgeSquareSum(c) {
   return false;
 };
 
-console.log(judgeSquareSum(5)); // => True
-console.log(judgeSquareSum(3)); // => False
-console.log(judgeSquareSum(9)); // => True
-console.log(judgeSquareSum(1)); // => True
+// Time Complexity: O(logn) because we only iterate up to the square root of c
+// Space complexity: O(logn) same reason as above for variable b
+
+// console.log(judgeSquareSum(5)); // => True
+// console.log(judgeSquareSum(3)); // => False
+// console.log(judgeSquareSum(9)); // => True
+// console.log(judgeSquareSum(1)); // => True
+
+function canPlaceFlowers(n) {
+
+};
+
+console.log(canPlaceFlowers([1, 0, 0, 0, 1], 1)); // => True
+console.log(canPlaceFlowers([1, 0, 0, 0, 1], 2)); // => False
