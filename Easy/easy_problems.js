@@ -1692,7 +1692,8 @@ function lengthOfLastWord(s) {
 
 function buddyStrings(A, B) {
   A.forEach((el, idx) => {
-    let newA = [A[el], A[idx]] = [A[idx], A[el]];
+    let newA = A.split('');
+    newA = [newA[el], newA[idx]] = [newA[idx], newA[el]];
   })
 
   return false;
