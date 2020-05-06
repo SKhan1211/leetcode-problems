@@ -1691,8 +1691,8 @@ function lengthOfLastWord(s) {
 // console.log(lengthOfLastWord("a ")); //=> 1
 
 function buddyStrings(A, B) {
-  for (let i = 0; i < A.length; i++) {
-    let newA = A.split('');
+  for (let i = 0; i < A.length - 1; i++) {
+    var newA = A.split('');
     [newA[i], newA[i + 1]] = [newA[i + 1], newA[i]];
     if (newA.join('') === B) return true;
   }
@@ -1700,5 +1700,6 @@ function buddyStrings(A, B) {
   return false;
 };
 
-console.log(buddyStrings("ab", "ba")); // => true
-console.log(buddyStrings("aaaaaaabc", "aaaaaaacb")); // => true
+// console.log(buddyStrings("ab", "ba")); // => true
+console.log(buddyStrings("ab", "ab")); // => false
+// console.log(buddyStrings("aaaaaaabc", "aaaaaaacb")); // => true
