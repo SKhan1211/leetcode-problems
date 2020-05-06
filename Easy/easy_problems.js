@@ -1682,7 +1682,21 @@ function thirdMax(nums) {
 // console.log(thirdMax([2, 2, 3, 1])); // => 1
 
 function lengthOfLastWord(s) {
-
+  let splitS = s.split(" ");
+  if (splitS.length < 2) return 0;
+  return splitS[splitS.length - 1].length;
 };
 
-console.log(lengthOfLastWord("Hello World")); //=> 5
+// console.log(lengthOfLastWord("Hello World")); //=> 5
+// console.log(lengthOfLastWord("a ")); //=> 1
+
+function buddyStrings(A, B) {
+  A.forEach((el, idx) => {
+    let newA = [A[el], A[idx]] = [A[idx], A[el]];
+  })
+
+  return false;
+};
+
+console.log(buddyStrings("ab", "ba")); // => true
+console.log(buddyStrings("aaaaaaabc", "aaaaaaacb")); // => true
