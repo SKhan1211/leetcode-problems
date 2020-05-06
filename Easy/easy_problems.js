@@ -1691,10 +1691,11 @@ function lengthOfLastWord(s) {
 // console.log(lengthOfLastWord("a ")); //=> 1
 
 function buddyStrings(A, B) {
-  A.forEach((el, idx) => {
+  for (let i = 0; i < A.length; i++) {
     let newA = A.split('');
-    newA = [newA[el], newA[idx]] = [newA[idx], newA[el]];
-  })
+    [newA[i], newA[i + 1]] = [newA[i + 1], newA[i]];
+    if (newA.join('') === B) return true;
+  }
 
   return false;
 };
