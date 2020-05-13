@@ -1729,3 +1729,10 @@ function addDigits(num) {
 // var add Digits = function(num) {
 //   return num > 0 && num % 9 === 0 ? 0 : num % 9;
 // };
+
+function firstUniqChar(s) {
+
+};
+
+console.log(firstUniqChar("leetcode")); // => 0
+console.log(firstUniqChar("loveleetcode")); // => 2
