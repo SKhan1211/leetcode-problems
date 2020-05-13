@@ -1769,7 +1769,17 @@ function firstUniqChar(s) {
 // }
 
 function detectCapitalUse(word) {
+  if (word[1] === word[1].toUpperCase()) {
+    for (let i = 1; i < word.length; i++) {
+      if (word[i] === word[i].toLowerCase()) return false;
+    }
+  } else {
+    for (let i = 1; i < word.length; i++) {
+      if (word[i] === word[i].toUpperCase()) return false;
+    };
+  }
 
+  return true;
 };
 
 console.log(detectCapitalUse("USA")); // => True
