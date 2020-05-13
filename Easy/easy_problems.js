@@ -1705,7 +1705,14 @@ function buddyStrings(A, B) {
 // console.log(buddyStrings("aaaaaaabc", "aaaaaaacb")); // => true
 
 function addDigits(num) {
+  // I need a way to take the two digits and use modulo and dividing to seperate the nums
+  // Loop to add them together
 
+  while (num > 9) {
+    num = Math.floor(num / 10) + Math.floor(num % 10);
+  }
+
+  return num;
 };
 
 console.log(addDigits(38)); // => 2
