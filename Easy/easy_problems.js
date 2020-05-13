@@ -1701,5 +1701,11 @@ function buddyStrings(A, B) {
 };
 
 // console.log(buddyStrings("ab", "ba")); // => true
-console.log(buddyStrings("ab", "ab")); // => false
+// console.log(buddyStrings("ab", "ab")); // => false
 // console.log(buddyStrings("aaaaaaabc", "aaaaaaacb")); // => true
+
+function addDigits(num) {
+
+};
+
+console.log(addDigits(38)); // => 2
