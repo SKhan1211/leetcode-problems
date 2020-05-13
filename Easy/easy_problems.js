@@ -1767,3 +1767,10 @@ function firstUniqChar(s) {
 
 //   return -1;
 // }
+
+function detectCapitalUse(word) {
+
+};
+
+console.log(detectCapitalUse("USA")); // => True
+console.log(detectCapitalUse("FlaG")); // => False
