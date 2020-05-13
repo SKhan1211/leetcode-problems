@@ -1731,8 +1731,21 @@ function addDigits(num) {
 // };
 
 function firstUniqChar(s) {
+  // Iterate through the string
+  // Look at current letter, split around the rest of the string and concat if needed
+  // Check if it includes that letter - naive solution
 
+  for (let i = 0; i < s.length; i++) {
+    let splitStr = s.slice(0, i) + s.slice(i + 1);
+    if (!splitStr.includes(s[i])) return i;
+  }
+
+  return -1;
 };
 
-console.log(firstUniqChar("leetcode")); // => 0
-console.log(firstUniqChar("loveleetcode")); // => 2
+// Time complexity: O(n^2)
+// Space complexity: O(n)
+
+// console.log(firstUniqChar("leetcode")); // => 0
+// console.log(firstUniqChar("loveleetcode")); // => 2
+
