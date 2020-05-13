@@ -1715,4 +1715,17 @@ function addDigits(num) {
   return num;
 };
 
-console.log(addDigits(38)); // => 2
+// Time complexity: O(logn);
+// Space complexity: O(C);
+
+// console.log(addDigits(38)); // => 2
+
+// Alternative Solutions:
+// var addDigits = function(num) {
+//   if (isNaN(num) || num === 0) return 0;
+//   if (num < 10) return num;
+//   return num % 9 === 0 ? 9 : num % 9;
+// };
+// var add Digits = function(num) {
+//   return num > 0 && num % 9 === 0 ? 0 : num % 9;
+// };
