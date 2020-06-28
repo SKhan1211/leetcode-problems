@@ -1782,5 +1782,20 @@ function detectCapitalUse(word) {
   return true;
 };
 
-console.log(detectCapitalUse("USA")); // => True
-console.log(detectCapitalUse("FlaG")); // => False
+// console.log(detectCapitalUse("USA")); // => True
+// console.log(detectCapitalUse("FlaG")); // => False
+
+// let x = 2;
+// let y = 8;
+
+// const a = function (b) { 
+//   return function (c) { 
+//     return x + y + Math.abs(b) + c; 
+//   } 
+// };
+
+// y = 4;
+
+// const fn = a(x);
+// x = 4;
+// console.log(fn(Math.random() * 10));
